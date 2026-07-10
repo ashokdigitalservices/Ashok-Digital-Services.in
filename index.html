@@ -3,38 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashok Digital Services | બેસ્ટ ઓનલાઈન સરકારી અને ડિજિટલ સેવાઓ</title>
+    <title>Ashok Digital Services | સ્ટેટસ ચેક કરો</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* (પહેલાનું બધું સ્ટાઇલિંગ અહીં રાખવું, મેં સ્ટેટસ માટે નવું ઉમેર્યું છે) */
         :root { --primary-color: #0b4c8c; --secondary-color: #198754; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         
-        /* નવો વર્કિંગ ફોટો સેક્શન સ્ટાઇલ */
-        .workspace-section { padding: 60px 20px; display: flex; align-items: center; justify-content: center; gap: 40px; background: #fff; }
-        .workspace-img { width: 45%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .workspace-text { width: 45%; }
-        .workspace-text h2 { color: var(--primary-color); font-size: 2rem; margin-bottom: 15px; }
+        .status-section { padding: 80px 20px; background: #fff; text-align: center; }
+        .status-box { max-width: 500px; margin: 0 auto; padding: 30px; background: #eef2f7; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .status-box input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        .status-box button { background: var(--primary-color); color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        #statusResult { margin-top: 20px; font-weight: bold; color: #d9534f; }
         
-        /* બાકીનું બધું સ્ટાઇલિંગ જૂનું જ છે, બસ આ નવું ઉમેર્યું છે */
-        .section-padding { padding: 80px 20px; }
-        .bg-light { background-color: #eef2f7; }
-        /* (અહીં બાકીનો જૂનો CSS કોડ છે, જે તમે અગાઉ મૂક્યો હતો તે જ રાખવાનો) */
+        /* બાકીનું સ્ટાઇલિંગ જૂનું જ છે, તે જ રાખવું */
     </style>
 </head>
 <body>
 
-    <!-- [અહીં તમારા અગાઉના હેડર અને હીરો સેક્શન છે, તે જ રાખવા] -->
+    <!-- [ઉપરનું બધું જૂનું સ્ટ્રક્ચર સેમ રાખવું] -->
 
-    <!-- 🆕 નવો વર્કિંગ ફોટો સેક્શન -->
-    <section class="workspace-section">
-        <img src="https://static.vecteezy.com/system/resources/previews/076/419/626/large_2x/focused-young-male-entrepreneur-working-on-a-laptop-at-a-home-office-desk-professional-freelance-man-using-computer-for-remote-work-business-strategy-and-online-digital-marketing-photo.jpg" alt="Working on digital services" class="workspace-img">
-        <div class="workspace-text">
-            <h2>અમે તમારી સેવામાં હરહંમેશ તૈયાર</h2>
-            <p>અમે અત્યાધુનિક ટેકનોલોજી અને લેપટોપનો ઉપયોગ કરીને તમારું દરેક સરકારી કામ એકદમ ઝડપથી અને સચોટ રીતે કરીએ છીએ. તમારા દસ્તાવેજોની સુરક્ષા અને સમયસર કામ પૂરું કરવું એ અમારી પહેલી જવાબદારી છે.</p>
+    <!-- 🆕 સ્ટેટસ ચેકર સેક્શન -->
+    <section id="status" class="status-section">
+        <h2 class="section-title">તમારી એપ્લિકેશનનું સ્ટેટસ ચેક કરો</h2>
+        <div class="status-box">
+            <p>તમારો મોબાઈલ નંબર અથવા એપ્લિકેશન આઈડી દાખલ કરો:</p>
+            <input type="text" id="userInput" placeholder="દા.ત. 9484418910">
+            <button onclick="checkStatus()">સ્ટેટસ જુઓ</button>
+            <div id="statusResult"></div>
         </div>
     </section>
 
-    <!-- [અહીં તમારો જૂનો સર્વિસ અને બાકીનો કોડ છે, તે જ રાખવો] -->
+    <script>
+        // અહીં તમારા ગ્રાહકોની યાદી છે. તમારે ફક્ત અહીં નંબર અને સ્ટેટસ બદલવાનું રહેશે.
+        const database = {
+            "9484418910": "તમારું પાસપોર્ટનું કામ પ્રોસેસમાં છે.",
+            "9876543210": "તમારું ITR ફાઈલિંગ પૂર્ણ થઈ ગયું છે.",
+            "1234567890": "તમારું પાન કાર્ડ બની ગયું છે, કલેક્ટ કરી લો."
+        };
 
+        function checkStatus() {
+            const input = document.getElementById('userInput').value;
+            const resultDiv = document.getElementById('statusResult');
+            
+            if (database[input]) {
+                resultDiv.innerHTML = "સ્ટેટસ: " + database[input];
+                resultDiv.style.color = "#198754"; // લીલો રંગ
+            } else {
+                resultDiv.innerHTML = "માફ કરશો, આ નંબર માટે કોઈ માહિતી મળતી નથી.";
+                resultDiv.style.color = "#d9534f"; // લાલ રંગ
+            }
+        }
+    </script>
+
+    <!-- [બાકીનું નીચેનું જૂનું સેક્શન] -->
 </body>
 </html>
