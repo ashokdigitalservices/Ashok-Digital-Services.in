@@ -92,7 +92,7 @@
             font-size: 1rem;
         }
 
-        /* 🆕 Live Announcement Ticker */
+        /* Live Announcement Ticker */
         .ticker-wrap {
             background: #fff3cd;
             color: #856404;
@@ -224,7 +224,54 @@
             margin-top: 15px;
         }
 
-        /* 🆕 Testimonials (Reviews) Grid */
+        /* 🆕 Smart Features Section Grid */
+        .smart-features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .smart-card {
+            background: #fff;
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+            border-bottom: 4px solid #198754;
+        }
+
+        .smart-card h3 {
+            color: #0b4c8c;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .smart-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .smart-card ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            color: #555;
+        }
+
+        .smart-card ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #198754;
+        }
+
+        /* Testimonials (Reviews) Grid */
         .reviews-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -244,20 +291,9 @@
         .stars { color: #ffc107; margin-bottom: 10px; }
         .reviewer-name { font-weight: bold; margin-top: 15px; color: #0b4c8c; font-size: 0.95rem;}
 
-        /* 🆕 FAQ Section Styling */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: #fff;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-
+        /* FAQ Section Styling */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: #fff; margin-bottom: 15px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
         .faq-question { font-weight: bold; color: #0b4c8c; margin-bottom: 8px; font-size: 1.1rem; }
         .faq-answer { color: #555; }
 
@@ -297,7 +333,7 @@
 </head>
 <body>
 
-    <!-- 🆕 Ticker for Latest Updates -->
+    <!-- Ticker for Latest Updates -->
     <div class="ticker-wrap">
         <i class="fa-solid fa-bell fa-bounce" style="color: #d9534f;"></i>
         <marquee behavior="scroll" direction="left">જરૂરી સૂચના: ભારતીય રેલવે (Railway Recruitment 2026), પાસપોર્ટ એપ્લિકેશન, પાન કાર્ડ તથા ઇનકમ ટેક્સ રિટર્ન (ITR) ના ઓનલાઈન ફોર્મ ભરવાનું ચાલુ છે. ઘરે બેઠા કામ કરાવવા અત્યારે જ સંપર્ક કરો.</marquee>
@@ -318,8 +354,8 @@
                     <li><a href="#home">હોમ</a></li>
                     <li><a href="#about">અમારા વિશે</a></li>
                     <li><a href="#services">સેવાઓ</a></li>
-                    <li><a href="#faq">પ્રશ્નોત્તરી</a></li>
-                    <li><a href="#payment">પેમેન્ટ</a></li>
+                    <li><a href="#smart-features">સ્માર્ટ સુવિધાઓ</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </nav>
         </div>
@@ -337,17 +373,47 @@
         </div>
     </section>
 
-    <!-- 🆕 About Us Section -->
+    <!-- About Us Section -->
     <section id="about" class="section-padding bg-white">
         <h2 class="section-title">અમારા વિશે (About Us)</h2>
         <div class="about-content">
             <p style="margin-bottom: 20px; font-weight: bold; color: #0b4c8c;">વિશ્વાસ, સચોટતા અને ઝડપી ડિજિટલ સેવાઓનું એકમાત્ર સરનામું.</p>
-            <p>અમે લાંબા સમયના અનુભવ સાથે ગ્રાહકોને તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, પાસપોર્ટ, RTO લાયસન્સ, પીએફ (PF) અને ટેક્સ કન્સલ્ટિંગની સેવાઓ પુરી પાડીએ છીએ. ગ્રાહકોના કિંમતી દસ્તાવેજોની ગુપ્તતા અને સુરક્ષા જાળવવી એ જ અમારો મુખ્ય ધ્યેય છે. અમારું લક્ષ્ય તમને સરકારી કચેરીઓના ધક્કા ખાધા વગર ઘરે બેઠા સો ટકા સાચું કામ કરી આપવાનું છે.</p>
+            <p>અમે લાંબા સમયના અનુભવ સાથે ગ્રાહકોને તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, પાસપોર્ટ, RTO લાયસન્સ, પીએફ (PF) અને ટેક્સ કન્સલ્ટિંગની સેવાઓ પૂરી પાડીએ છીએ. ગ્રાહકોના કિંમતી દસ્તાવેજોની ગુપ્તતા અને સુરક્ષા જાળવવી એ જ અમારો મુખ્ય ધ્યેય છે. અમારું લક્ષ્ય તમને સરકારી કચેરીઓના ધક્કા ખાધા વગર ઘરે બેઠા સો ટકા સાચું કામ કરી આપવાનું છે.</p>
+        </div>
+    </section>
+
+    <!-- 🆕 Smart Systems Features Section -->
+    <section id="smart-features" class="section-padding bg-light">
+        <h2 class="section-title">અમારી સ્માર્ટ સિસ્ટમ્સ (Smart Features)</h2>
+        <div class="smart-features-container">
+            
+            <!-- 1. WhatsApp Business Tools -->
+            <div class="smart-card">
+                <h3><i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 1.8rem;"></i> વૉટ્સએપ બિઝનેસ સપોર્ટ</h3>
+                <p>અમે ગ્રાહકોના ઝડપી સંપર્ક અને શ્રેષ્ઠ અનુભવ માટે સ્માર્ટ ડિજિટલ ટૂલ્સનો ઉપયોગ કરીએ છીએ:</p>
+                <ul>
+                    <li><strong>ઝડપી પ્રત્યુત્તર (Quick Replies):</strong> તમારા દરેક સામાન્ય પ્રશ્નોના ત્વરિત જવાબો.</li>
+                    <li><strong>ઓફિશિયલ કેટલોગ સપોર્ટ:</strong> તમામ સેવાઓની ફી અને જરૂરી દસ્તાવેજોની યાદી સીધી વૉટ્સએપ પર.</li>
+                    <li><strong>૨૪/૭ એટેન્ડન્સ:</strong> ઓફિસ સમય સિવાય પણ ઓટોમેટેડ ગ્રીટિંગ મેસેજ સિસ્ટમ.</li>
+                </ul>
+            </div>
+
+            <!-- 2. Customer Database & Follow-up -->
+            <div class="smart-card">
+                <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ફોલો-અપ</h3>
+                <p>તમારા જરૂરી દસ્તાવેજો અને ફાઈલિંગના ડેટાને અમે એકદમ આધુનિક પદ્ધતિથી ઓર્ગેનાઈઝ કરીએ છીએ:</p>
+                <ul>
+                    <li><strong>સુરક્ષિત ડેટાબેઝ:</strong> ગ્રાહકોના મહત્વના આઈડી પ્રૂફ અને રેકોર્ડ્સ સંપૂર્ણ ગુપ્ત અને સેફ રહે છે.</li>
+                    <li><strong>સમયસર રીમાઇન્ડર્સ (Follow-ups):</strong> ITR ફાઇલિંગ, ડ્રાઈવિંગ લાયસન્સ અથવા પાસપોર્ટ રીન્યુઅલની તારીખ આવતા જ એડવાન્સ એલર્ટ.</li>
+                    <li><strong>વન-ક્લિક હિસ્ટ્રી:</strong> જૂના ગ્રાહકોના દસ્તાવેજો ફરીથી અપલોડ કરવાની ઝંઝટમાંથી મુક્તિ.</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
     <!-- Services Section (તમામ ૧૦ સેવાઓ) -->
-    <section id="services" class="section-padding bg-light">
+    <section id="services" class="section-padding bg-white">
         <h2 class="section-title">અમારી મુખ્ય સેવાઓ (Our Services)</h2>
         <div class="services-container">
             
@@ -363,7 +429,7 @@
             <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20PF%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-piggy-bank"></i></div>
                 <h3>PF નું તમામ કામકાજ</h3>
-                <p>PF ઉપાડવું, એડવાન્સ મની, KYC અપડેટ અને નામ/જન્મતારીખ સુધારણા જેવી તમામ કામગીરી.</p>
+                <p>PF ઉપાડવું, એડવાન્સ Mony, KYC અપડેટ અને નામ/જન્મતારીખ સુધારણા જેવી તમામ કામગીરી.</p>
                 <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
             </a>
 
@@ -408,7 +474,7 @@
             </a>
 
             <!-- 8. Govt Forms -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ઓનલાઈન%20સરકારી%20ફોર્મ%20ભરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ઓનલાઈન%20સરકારી%20照મ%20ભરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-file-signature"></i></div>
                 <h3>ઓનલાઈન સરકારી ફોર્મ</h3>
                 <p>વિવિધ સરકારી યોજનાઓ, સબસિડી, સ્કોલરશીપ અને ભરતી માટેના તમામ પ્રકારના ઓનલાઈન ફોર્મ.</p>
@@ -434,8 +500,8 @@
         </div>
     </section>
 
-    <!-- 🆕 Customers Reviews Section -->
-    <section id="reviews" class="section-padding bg-white">
+    <!-- Customers Reviews Section -->
+    <section id="reviews" class="section-padding bg-light">
         <h2 class="section-title">ગ્રાહકોના અભિપ્રાય (Customer Reviews)</h2>
         <div class="reviews-container">
             <div class="review-card">
@@ -456,8 +522,8 @@
         </div>
     </section>
 
-    <!-- 🆕 FAQ Section -->
-    <section id="faq" class="section-padding bg-light">
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding bg-white">
         <h2 class="section-title">વારંવાર પૂછાતા પ્રશ્નો (FAQ)</h2>
         <div class="faq-container">
             <div class="faq-item">
@@ -476,7 +542,7 @@
     </section>
 
     <!-- Payment Section -->
-    <section id="payment" class="section-padding bg-white">
+    <section id="payment" class="section-padding bg-light">
         <h2 class="section-title">ઓનલાઈન પેમેન્ટ (Pay Online)</h2>
         <p style="text-align:center; color:#666; margin-bottom:30px;">કોઈપણ સેવાના ચાર્જ માટે તમે નીચે આપેલા UPI ID નો ઉપયોગ કરીને સીધું ગુગલ પે, ફોનપે કે પેટીએમથી સુરક્ષિત પેમેન્ટ કરી શકો છો.</p>
         <div class="qr-container">
@@ -489,7 +555,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-light">
+    <section id="contact" class="section-padding bg-white">
         <h2 class="section-title">સંપર્ક કરો (Contact Us)</h2>
         <div class="contact-grid">
             <div class="contact-info">
