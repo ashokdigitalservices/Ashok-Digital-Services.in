@@ -102,9 +102,9 @@
             color: var(--primary-color);
         }
 
-        /* Hero Section with Super Fast-loading Background Image */
+        /* Hero Section with internal Background Image */
         .hero {
-            background: linear-gradient(135deg, rgba(11, 76, 140, 0.9) 0%, rgba(25, 135, 84, 0.9) 100%), url('https://i.ibb.co/30Z3CgN/166036.png') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(11, 76, 140, 0.85) 0%, rgba(25, 135, 84, 0.85) 100%), url('166036.png') no-repeat center center/cover;
             padding: 110px 20px;
             text-align: center;
             border-bottom: 1px solid #e9ecef;
@@ -176,6 +176,35 @@
         .btn-wp:hover {
             background-color: #20ba5a;
             transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            color: #0b4c8c;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
         }
 
         /* Services Section */
@@ -386,8 +415,8 @@
     <header>
         <div class="navbar">
             <a href="#home" class="logo-container">
-                <!-- નવો ૧૦૦% ઓપન લાઈવ લોગો લિંક -->
-                <img src="https://i.ibb.co/vYgK6S7/166032.png" alt="Ashok Digital Services Logo" class="logo-img">
+                <!-- ઇન્ટરનલ ફાઇલ પાથ સેટ કર્યો છે ભાઈ -->
+                <img src="166032.png" alt="Ashok Digital Services Logo" class="logo-img">
                 <div class="logo-text">
                     ASHOK DIGITAL SERVICES
                     <span>તમારી ઓનલાઈન ડિજિટલ સહાયક</span>
@@ -398,16 +427,17 @@
                     <li><a href="#home">હોમ</a></li>
                     <li><a href="#services">સેવાઓ</a></li>
                     <li><a href="#payment">પેમેન્ટ</a></li>
+                    <li><a href="#contact">સંપર્ક કરો</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section with Custom Background -->
+    <!-- Hero Section with Internal Background -->
     <section id="home" class="hero">
         <div class="hero-container">
             <h1>સરકારી અને ડિજિટલ કામકાજ હવે થયું સરળ અને સુરક્ષિત!</h1>
-            <p>તમામ પ્રકારના ઓનલાઈન ફોર્મ, PF, ડ્રાઈવિંગ લાયસન્સ, પાન કાગળ અને ઇનકમ ટેક્સ રિટર્ન (ITR) નું કામ ઘરે બેઠા એકદમ સચોટ અને ભરોસાપાત્ર રીતે કરી આપવામાં આવશે.</p>
+            <p>તમામ પ્રકારના ઓનલાઈન ફોર્મ, PF, ડ્રાઈવિંગ લાયસન્સ, પાન કાર્ડ અને ઇનકમ ટેક્સ રિટર્ન (ITR) નું કામ ઘરે બેઠા એકદમ સચોટ અને ભરોસાપાત્ર રીતે કરી આપવામાં આવશે.</p>
             <div class="cta-buttons">
                 <a href="tel:+919484418910" class="btn-call"><i class="fa-solid fa-phone"></i> અત્યારે જ કોલ કરો</a>
                 <a href="https://wa.me/919484418910?text=Hello%20Ashok%20Digital%20Services,%20mane%20mahitni%20joie%20che." target="_blank" class="btn-wp"><i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ મેસેજ કરો</a>
@@ -441,7 +471,7 @@
             <a href="https://wa.me/919484418910?text=Hello%20Ashok%20Digital%20Services,%20mane%20PAN%20card%20na%20kam%20vise%20mahitni%20joie%20che." target="_blank" class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-address-card"></i></div>
                 <h3>પાન કાર્ડ (PAN Card)</h3>
-                <p>નવું પાન કાગળ બનાવવું, ભૂલ સુધારવી, આધાર-પાન લિંક કરવું અને ખોવાઈ ગયેલું પાન કાર્ડ ફરી મેળવવું.</p>
+                <p>નવું પાન કાર્ડ બનાવવું, ભૂલ સુધારવી, આધાર-પાન લિંક કરવું અને ખોવાઈ ગયેલું પાન કાગળ ફરી મેળવવું.</p>
                 <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
             </a>
 
@@ -464,7 +494,7 @@
             <!-- E-Shram Card -->
             <a href="https://wa.me/919484418910?text=Hello%20Ashok%20Digital%20Services,%20mane%20E%20shram%20card%20na%20kam%20vise%20mahitni%20joie%20che." target="_blank" class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-users-gear"></i></div>
-                <h3>ઈ-શ્રમ કાગળ (E-Shram)</h3>
+                <h3>ઈ-શ્રમ કાર્ડ (E-Shram)</h3>
                 <p>શ્રમિકો માટે સરકારી યોજનાઓનો લાભ લેવા માટેનું નવું ઈ-શ્રમ કાર્ડ રજીસ્ટ્રેશન અને અપડેટ.</p>
                 <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
             </a>
@@ -496,18 +526,18 @@
         </div>
     </section>
 
-    <!-- Payment QR Code Section with 100% Tested Live Image -->
+    <!-- Payment QR Code Section with Internal Path -->
     <section id="payment" class="payment-section">
         <h2 class="section-title">ઓનલાઈન પેમેન્ટ (Pay Online)</h2>
         <p class="section-subtitle">કોઈપણ ડિજિટલ સેવાના ચાર્જ માટે તમે આ ઓરિજિનલ QR કોડ સ્કેન કરીને ડાયરેક્ટ પેમેન્ટ કરી શકો છો.</p>
         <div class="qr-container">
-            <!-- નવો ૧૦૦% ઓપન લાઈવ ગૂગલ પે QR કોડ લિંક -->
-            <img src="https://i.ibb.co/b3TjSkx/160301.png" alt="Ashoka India Google Pay QR Code" class="qr-img">
+            <!-- અસલી ક્રોપ કરેલો ઇન્ટરનલ ક્યુઆર કોડ પાથ ભાઈ -->
+            <img src="160301.png" alt="Ashoka India Google Pay QR Code" class="qr-img">
             <div class="pay-text"><i class="fa-solid fa-qrcode"></i> UPI ID: ashokbhai56585-1@okaxis</div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (સંપર્ક કરો) -->
     <section id="contact" class="contact">
         <h2 class="section-title">સંપર્ક કરો (Contact Us)</h2>
         <div class="contact-grid">
