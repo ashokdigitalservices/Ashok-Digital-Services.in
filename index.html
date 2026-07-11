@@ -334,7 +334,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (વચ્ચે પાછું લાવી દીધું શેર બટન) -->
     <section id="home" class="hero">
         <div class="hero-container">
             <h1>સરકારી અને ડિજिटल કામકાજ હવે થયું સરળ અને સુરક્ષિત!</h1>
@@ -342,7 +342,20 @@
             <div class="cta-buttons">
                 <a href="tel:+919484418910" class="btn-call"><i class="fa-solid fa-phone"></i> કોલ કરો</a>
                 <a href="https://wa.me/919484418910?text=નમસ્તે" target="_blank" class="btn-wp"><i class="fa-brands fa-whatsapp"></i> મેસેજ કરો</a>
+                <!-- 🌟 આ રહ્યું તમારું અસલી શેર સાઇટ બટન -->
+                <a href="https://wa.me/?text=*Ashok%20Digital%20Services* - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, PF, પાન કાર્ડ અને ITR નું કામ ઘરે બેઠા કરાવવા માટે આજે જ આ લિંક પર ક્લિક કરો: https://ashokdigitalservices.github.io" target="_blank" class="btn-share-main">
+                    <i class="fa-solid fa-share-nodes"></i> સાઇટ શેર કરો
+                </a>
             </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white">
+        <h2 class="section-title">અમારા વિશે (About Us)</h2>
+        <div class="about-content">
+            <p style="margin-bottom: 20px; font-weight: bold; color: #0b4c8c;">વિશ્વાસ, સચોટતા અને ઝડપી ડિજिटल સેવાઓનું એકમાત્ર સરનામું.</p>
+            <p>અમે લાંબા સમયના અનુભવ સાથે ગ્રાહકોને તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, પાસપોર્ટ, RTO લાયસન્સ, પીએફ (PF) અને ટેક્સ કન્સલ્ટિંગની સેવાઓ પૂરી પાડીએ છીએ. અમારું લક્ષ્ય તમને સરકારી કચેરીઓના ધક્કા ખાધા વગર ઘરે બેઠા સો ટકા સાચું કામ કરી આપવાનું છે.</p>
         </div>
     </section>
 
@@ -435,7 +448,7 @@
             <!-- 9. E-Shram -->
             <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-users-gear"></i></div>
-                <h3>ઈ-શ્રમ kaart (E-Shram)</h3>
+                <h3>ઈ-શ્રમ કાર્ડ (E-Shram)</h3>
                 <p>સરકારી યોજનાઓનો લાભ લેવા માટેનું નવું ઈ-શ્રમ કાર્ડ રજીસ્ટ્રેશન.</p>
                 <div class="card-action-buttons">
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20મને%20ઈ-શ્રમ%20માટે%20માહિતી%20જોઈએ." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
@@ -471,10 +484,10 @@
         </div>
     </section>
 
-    <!-- ડાયરેક્ટ વોટ્સએપ એટેચમેન્ટ અપલોડ સેક્શન -->
+    <!-- ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર (ડાયરેક્ટ વૉટ્સએપ મેસેજ સિસ્ટમ) -->
     <section id="upload" class="upload-section">
         <h2 class="section-title"><i class="fa-solid fa-cloud-arrow-up"></i> ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર</h2>
-        <p style="text-align:center; color:#666; margin-bottom:30px;">અહીં વિગતો ભરીને સબમિટ કરો, ફાઈલ સીધી તમારા WhatsApp પર એટેચ થઈ જશે:</p>
+        <p style="text-align:center; color:#666; margin-bottom:30px;">અહીં વિગતો ભરીને સબમિટ કરો, ફાઈલનું લિસ્ટ સીધું વૉટ્સએપ ચેટમાં ટાઈપ થઈ જશે:</p>
         <div class="upload-box">
             <form id="docUploadForm" onsubmit="handleUpload(event)">
                 <input type="text" id="clientName" placeholder="ગ્રાહકનું આખું નામ" required>
@@ -516,12 +529,32 @@
         <p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>
     </footer>
 
+    <!-- Mobile Navigation Fixed Bottom Bar -->
     <div class="fixed-call-bar">
         <a href="tel:+919484418910" style="background-color: #198754;"><i class="fa-solid fa-phone"></i> કોલ કરો</a>
         <a href="https://wa.me/919484418910?text=નમસ્તે" target="_blank" style="background-color: #25d366;"><i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ</a>
     </div>
 
-    <!-- Script Engine -->
+    <!-- વૉટ્સએપ ચેટ બોટ વિજેટ -->
+    <div class="whatsapp-bot-widget">
+        <div class="whatsapp-bot-button" onclick="toggleBotBox()"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="whatsapp-bot-box" id="botBox">
+            <div class="whatsapp-bot-header">
+                <div class="whatsapp-bot-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                <div>
+                    <h4 style="font-size: 0.95rem;">Ashok Digital Bot</h4>
+                </div>
+            </div>
+            <div class="whatsapp-bot-body">
+                <div class="whatsapp-bot-msg">નમસ્તે ભાઈ! 🙏 હું અશોક ડિજિટલ બોટ છું. કઈ સેવા માટે પૂછપરછ કરવી છે? નીચે લખીને મોકલો!</div>
+            </div>
+            <div class="whatsapp-bot-footer">
+                <input type="text" id="botInput" class="whatsapp-bot-input" placeholder="પ્રશ્ન અહીં લખો..." onkeypress="handleBotKey(event)">
+                <button class="whatsapp-bot-send" onclick="sendBotMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
     <script>
         const database = {
             "9484418910": "નમસ્તે અશોકભાઈ, તમારું પાસપોર્ટનું કામ પ્રોસેસમાં છે."
@@ -540,7 +573,22 @@
             }
         }
 
-        // 🚀 ડાયરેક્ટ વોટ્સએપ ફાઈલ ટ્રાન્સફર એન્જિન (0% અટકશે - 100% ફાસ્ટ)
+        function toggleBotBox() {
+            const box = document.getElementById('botBox');
+            box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function handleBotKey(e) { if (e.key === 'Enter') sendBotMessage(); }
+
+        function sendBotMessage() {
+            const input = document.getElementById('botInput');
+            if (input.value.trim() === "") return;
+            window.open("https://wa.me/919484418910?text=" + encodeURIComponent(input.value.trim()), '_blank');
+            input.value = "";
+            toggleBotBox();
+        }
+
+        // 🚀 વૉટ્સએપ ડાયરેક્ટ મેસેજ ટ્રાન્સફર એન્જિન
         function handleUpload(event) {
             event.preventDefault();
             
@@ -550,7 +598,7 @@
             const files = document.getElementById('clientFiles').files;
             const statusDiv = document.getElementById('uploadStatus');
 
-            statusDiv.innerHTML = "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે... કૃપા કરીને ચેટ ઓપન થતાં જ ફાઈલ સિલેક્ટ કરીને સેન્ડ કરો.";
+            statusDiv.innerHTML = "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે... કૃપા કરીને ચેટ ઓપન થતાં જ ફાઈલ મોકલી આપો.";
             statusDiv.style.color = "#ff9800";
 
             let fileNames = [];
@@ -558,9 +606,8 @@
                 fileNames.push(`📄 [કાગળ-${i+1}]: ${files[i].name}`);
             }
 
-            // ગ્રાહકની બધી વિગતો વાળો સુંદર મેસેજ તૈયાર થશે
-            const wpMessage = `નમસ્તે અશોક ડિજिटल સર્વિસીસ,
-મેં વેબસાઈટ પરથી મારા ડોક્યુમેન્ટ મોકલ્યા છે:
+            const wpMessage = `નમસ્તે અશોક ડિજિટલ સર્વિસીસ,
+મેં વેબસાઈટ પરથી મારા ડોક્યુમેન્ટ મોકલેલ છે:
 👤 નામ: ${name}
 📞 ફોન: ${phone}
 💼 સેવા: ${service}
@@ -571,19 +618,18 @@ ${fileNames.join('\n')}
 
 કૃપા કરીને મારું આ કામ જલ્દી શરૂ કરી આપશો.`;
 
-            // ડાયરેક્ટ વોટ્સએપ લિંક ઓપન થશે
             const finalWpUrl = "https://wa.me/919484418910?text=" + encodeURIComponent(wpMessage);
             
             setTimeout(() => {
                 window.open(finalWpUrl, '_blank');
                 document.getElementById('docUploadForm').reset();
-                statusDiv.innerHTML = "✅ વિગતો વૉટ્સએપ પર મોકલાઈ ગઈ છે! હવે તમારા કાગળો ચેટમાં એટેચ કરી દો.";
+                statusDiv.innerHTML = "✅ વિગતો મોકલાઈ ગઈ છે! હવે તમારા કાગળો આ ચેટમાં એટેચ કરી દો.";
                 statusDiv.style.color = "#198754";
             }, 1000);
         }
     </script>
 
-    <!-- ગૂગલ ટ્રાન્સલેટર સ્ક્રિપ્ટ -->
+    <!-- Google Translator -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'gu', includedLanguages: 'en,gu,hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
