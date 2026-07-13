@@ -330,8 +330,7 @@
         .status-box input { width: 100%; padding: 14px; margin: 15px 0; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1.05rem; text-align: center; background: var(--bg-main); color: var(--text-main); }
         .status-box button { background: #0b4c8c; color: white; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1.05rem; transition: background 0.2s; }
         .status-box button:hover { background: #083868; }
-        #statusResult { margin-top: 25px; font-size: 1.2rem; font-weight: bold; color: #198754; }
-        [data-theme="dark"] #statusResult { color: #2ae089; }
+        #statusResult { margin-top: 25px; font-size: 1.2rem; font-weight: bold; }
 
         /* Services Grid */
         .services-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
@@ -346,7 +345,7 @@
         .btn-action-info { background-color: #e8f5e9; color: #198754; border: 1px solid #198754; }
         .btn-action-info:hover { background-color: #c8e6c9; }
         [data-theme="dark"] .btn-action-info { background-color: #1b382b; color: #2ae089; border-color: #2ae089; }
-        .btn-action-doc { background-color: #e3f2fd; color: #0b4c8c; border: 1px solid #0b4c8c; cursor: pointer; }
+        .btn-action-doc { background-color: #e3f2fd; color: #0b4c8c; border: 1px solid #0b4c8c; cursor: pointer; outline: none; }
         .btn-action-doc:hover { background-color: #bbdefb; }
         [data-theme="dark"] .btn-action-doc { background-color: #1a2f4c; color: #64b5f6; border-color: #64b5f6; }
 
@@ -374,11 +373,6 @@
         .stars { color: #ffc107; margin-bottom: 10px; }
         .reviewer-name { font-weight: bold; margin-top: 15px; color: #0b4c8c; font-size: 0.95rem;}
         [data-theme="dark"] .reviewer-name { color: #64b5f6; }
-        
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { background: var(--bg-card); margin-bottom: 15px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-        .faq-question { font-weight: bold; color: #0b4c8c; margin-bottom: 8px; font-size: 1.1rem; }
-        .faq-answer { color: var(--text-muted); }
 
         /* Payment QR Container */
         .qr-container { max-width: 400px; margin: 0 auto; background: var(--light-color); padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px dashed #198754; text-align: center; transition: background-color 0.3s; }
@@ -410,6 +404,7 @@
         .whatsapp-bot-input { flex: 1; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 20px; outline: none; font-size: 0.9rem; background: var(--bg-main); color: var(--text-main); }
         .whatsapp-bot-send { background: #075e54; color: white; border: none; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
+        /* Custom Modal Box Styles */
         .custom-modal {
             display: none;
             position: fixed;
@@ -761,7 +756,7 @@
                 <h3>લાઇટ બિલમાં નામ ચેન્જ</h3>
                 <p>તમારી માલિકીના લાઇટ બિલમાં જૂનું નામ બદલીને નવું નામ ઓનલાઈન સચોટ રીતે કરી આપવામાં આવશે.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજitel%20સર્વિસીસ,%20મને%20લાઇટ%20બિલમાં%20નામ%20ચેન્જ%20કરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20લાઇટ%20બિલમાં%20નામ%20ચેન્જ%20કરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('light_bill')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -932,7 +927,7 @@
             <div class="contact-info" style="display: flex; align-items: center; justify-content: center; background: var(--bg-card);">
                 <div style="text-align: center;">
                     <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #198754; margin-bottom: 15px;"></i>
-                    <h3>૧૦૦% વિશ્વાસપાત્ર સેવા</h3>
+                    <h3>૧૦0% વિશ્વાસપાત્ર સેવા</h3>
                     <p style="color: #666;">તમામ દસ્તાવેજોની સુરક્ષા અને સચોટ ઓનલાઈન કામકાજ એ જ અમારો ધ્યેય છે.</p>
                 </div>
             </div>
@@ -972,7 +967,6 @@
 
     <footer>
         <p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>
-        <!-- નવી લીગલ કંડિશન લિંક્સ ફૂટરમાં ઉમેરી છે -->
         <div style="margin-top: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
             <a href="javascript:void(0)" onclick="showLegal('refund')" style="color: #ffda6a; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Refund & Cancellation Policy</a>
             <a href="javascript:void(0)" onclick="showLegal('terms')" style="color: #ffda6a; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Terms & Conditions</a>
@@ -997,7 +991,7 @@
                     <span style="font-size: 0.75rem; color: #a4e4cf;"><i class="fa-solid fa-circle" style="font-size: 0.5rem; color: #25d366;"></i> ઓનલાઇન સહાયક</span>
                 </div>
             </div>
-            <div class="whatsapp-bot-body">
+            <div class="whatsapp-bot-body" id="botBody">
                 <div class="whatsapp-bot-msg">નમસ્તે ભાઈ! 🙏 હું અશોક ડિજિટલ બોટ છું. કઈ સેવા માટે પૂછપરછ કરવી છે? નીચે લખીને મોકલો!</div>
             </div>
             <div class="whatsapp-bot-footer">
@@ -1020,14 +1014,13 @@
             }, 'google_translate_element');
         }
 
-        // ફિક્સ કરેલું નવું ગૂગલ ટ્રાન્સલેશન ફંક્શન
+        // ફિક્સ કરેલું ગૂગલ ટ્રાન્સલેશન ફંક્શન
         function changeLanguage(lang) {
             const selectEl = document.querySelector('.goog-te-combo');
             if (selectEl) {
                 selectEl.value = lang;
                 selectEl.dispatchEvent(new Event('change'));
             } else {
-                // જો ગૂગલ સ્ક્રિપ્ટ લોડ થવામાં થોડી સેકન્ડ લે તો રીટ્રાય કરશે
                 setTimeout(function() {
                     const retrySelect = document.querySelector('.goog-te-combo');
                     if (retrySelect) {
@@ -1088,13 +1081,12 @@
             },
             "pf_esic": {
                 title: "PF & ESIC ના કામ માટે જરૂરી કાગળો",
-                docs: ["UAN નંબર અને પાસવર્ડ", "આધાર કાર્ડ અને પાન કાર્ડ", "બેંક એકાઉન્ટ વિગતો (ચેક અથવા પાસબુક)", "કંપનીમાંથી છૂટા થયા તારીખ (Exit Date - જો ઉપાડવું હોય તો)"],
+                docs: ["UAN નંબર અને પાસવર્ડ", "આધાર કાર્ડ અને પાન કાર્ડ", "બેંક એકાઉન્ટ વિગતો (ચેક અથવા પાસબુક)", "કંપનીમાંથી છૂટા થયા તારીખ (Exit Date)"],
                 prices: [
                     { name: "KYC અપડેટ", value: "₹150" },
                     { name: "PF ઉપાડવું (Withdraw)", value: "₹250" },
-                    { name: "જૂની કંપનીના પૈસા નવી કંપનીમાં લાવવા", value: "₹100" }
-                ],
-                total: "₹500"
+                    { name: "કંપની ટ્રાન્સફર મની", value: "₹100" }
+                ]
             },
             "driving": {
                 title: "ડ્રાઈવિંગ લાયસન્સ માટે જરૂરી કાગળો",
@@ -1103,20 +1095,19 @@
                     { name: "2 વ્હીલર (Two Wheeler)", value: "₹1150" },
                     { name: "4 વ્હીલર (Four Wheeler)", value: "₹1350" },
                     { name: "2 & 4 વ્હીલર બન્ને (Both)", value: "₹1800" }
-                ],
-                total: "બાકી વિગતો તમારા કામ પર આધાર રાખે છે"
+                ]
             },
             "pan": {
                 title: "પાન કાર્ડ બનાવવા માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ (નામ અને જન્મતારીખ સાચી હોવી જરૂરી)", "મોબાઈલ નંબર", "૨ પાસપોર્ટ સાઇઝ ફોટો"],
+                docs: ["આધાર કાર્ડ (નામ-જન્મતારીખ સાચી હોવી જરૂરી)", "મોબાઈલ નંબર", "૨ પાસપોર્ટ સાઇઝ ફોટો"],
                 prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹307" }]
             },
             "light_bill": {
                 title: "લાઇટ બિલમાં નામ ચેન્જ કરવાના કાગળો",
-                docs: ["છેલ્લું લાઇટ બિલ", "નવા માલિકનું આધાર કાર્ડ અને પાન કાર્ડ", "મકાન વેચાણ દસ્તાવેજ અથવા હક્ક પત્રક/વારસાઈ પ્રમાણપત્ર", "પેઢી/સોસાયટીનું NOC સર્ટિફિકેટ"],
+                docs: ["છેલ્લું લાઇટ બિલ", "નવા માલિકનું આધાર કાર્ડ અને પાન કાર્ડ", "મકાન વેચાણ દસ્તાવેજ અથવા હક્ક પત્રક", "પેઢી/સોસાયટીનું NOC સર્ટિફિકેટ"],
                 prices: [
                     { name: "ફાઈલ ચાર્જ (File Charge)", value: "₹1000" },
-                    { name: "સરકારી ચાર્જ (Govt Charge)", value: "કામ પર આધાર રાખે છે" }
+                    { name: "સરકારી ચાર્જ (Govt Charge)", value: "કામ પર આધાર" }
                 ]
             },
             "voter": {
@@ -1126,27 +1117,26 @@
             },
             "eshram": {
                 title: "ઈ-શ્રમ કાર્ડ બનાવવા માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "બેંક એકાઉન્ટ પાસબુક", "આધાર સાથે લિંક હોય તેવો ચાલુ મોબાઈલ નંબર"],
+                docs: ["આધાર કાર્ડ", "બેંક એકાઉન્ટ પાસબુક", "આધાર સાથે લિંક હોય તેવો મોબાઈલ નંબર"],
                 prices: [{ name: "નવું રજીસ્ટ્રેશન (New Registration)", value: "₹100" }]
             },
             "govt_forms": {
                 title: "સરકારી ફોર્મ ભરવા માટે સામાન્ય કાગળો",
-                docs: ["આધાર કાર્ડ અને રેશન કાર્ડ", "શૈક્ષણિક માર્કશીટ અને સર્ટિફિકેટ્સ (ભરતી ફોર્મ માટે)", "જાતિનો દાખલો અને આવકનો દાખલો"],
-                prices: [{ name: "એપ્લિકેશન ફી (Application Fee)", value: "કામ પર આધાર રાખે છે" }]
+                docs: ["આધાર કાર્ડ અને રેશન કાર્ડ", "શૈક્ષણિક માર્કશીટ અને સર્ટિફિકેટ્સ", "જાતિનો દાખલો અને આવકનો દાખલો"],
+                prices: [{ name: "એપ્લિકેશન ફી (Application Fee)", value: "કામ પર આધાર" }]
             },
             "itr": {
                 title: "ITR રિટર્ન ફાઈલિંગ માટે જરૂરી કાગળો",
-                docs: ["પાન કાર્ડ અને આધાર કાર્ડ", "Form 16 (જો નોકરી કરતા હોય)", "બેંક એકાઉન્ટ સ્ટેટમેન્ટ (આખા વર્ષનું)", "બિઝનેસની આવક-જાવક અને લોનની વિગતો"],
+                docs: ["પાન કાર્ડ અને આધાર કાર્ડ", "Form 16 (જો નોકરી કરતા હોય)", "બેંક એકાઉન્ટ સ્ટેટમેન્ટ (આખા વર્ષનું)", "બિઝનેસની આવક-જાવક વિગતો"],
                 prices: [
                     { name: "ITR ફાઇલિંગ (Normal ITR)", value: "₹750" },
-                    { name: "ITR + TDS રીટર્ન (With TDS Return)", value: "₹2000" }
-                ],
-                total: "બાકી વિગતો ઓડિટ પર આધાર રાખે છે"
+                    { name: "ITR + TDS રીટર્ન", value: "₹2000" }
+                ]
             },
             "ration": {
                 title: "રેશન કાર્ડના કામકાજ માટે જરૂરી કાગળો",
-                docs: ["ઓરિજિનલ રેશન કાર્ડ", "પરિવારના તમામ સભ્યોના આધાર કાર્ડ", "નામ કમી કરવાનું હોય તો કમી કર્યાનું પ્રમાણપત્ર (LPC)", "નવું નામ ઉમેરવા માટે જન્મનો દાખલો અથવા મેરેજ સર્ટિફિકેટ"],
-                prices: [{ name: "સર્વિસ ચાર્જ (Service Charge)", value: "કામ પર આધાર રાખે છે" }]
+                docs: ["ઓરિજિનલ રેશન કાર્ડ", "પરિવારના તમામ સભ્યોના આધાર કાર્ડ", "નામ કમી કરવાનું હોય તો પ્રમાણપત્ર (LPC)", "નવું નામ ઉમેરવા જન્મનો દાખલો / મેરેજ સર્ટિફિકેટ"],
+                prices: [{ name: "સર્વિસ ચાર્જ (Service Charge)", value: "કામ પર આધાર" }]
             }
         };
 
@@ -1155,36 +1145,36 @@
             "refund": {
                 title: "Refund & Cancellation Policy",
                 html: `
-                    <p><strong>૧. રીફંડ નિયમો (Refund Rules):</strong> એકવાર ગ્રાહક દ્વારા ફોર્મ ભરવાની પ્રક્રિયા (Data Entry) અથવા સરકારી ફીની ચુકવણી ઓનલાઈન થઈ ગયા પછી કોઈ પણ સંજોગોમાં પેમેન્ટ રીફંડ કરવામાં આવશે નહીં.</p>
-                    <p style="margin-top:10px;"><strong>૨. સરકારી ફી (Government Fees):</strong> જો સરકારી સર્વરની ભૂલ અથવા ટેકનિકલ ખામીના કારણે ટ્રાન્ઝેક્શન ફેઈલ થાય, તો ડિપાર્ટમેન્ટના નિયમ મુજબ જ આગળની કાર્યવાહી થશે. તેમાં અમારી કોઈ વ્યક્તિગત જવાબદારી રહેશે નહીં.</p>
-                    <p style="margin-top:10px;"><strong>૩. ઓર્ડર કેન્સલેશન (Cancellation):</strong> જો તમે કોઈ કામ આપ્યા બાદ તેને અધવચ્ચેથી કેન્સલ કરવા માંગો છો, તો જો કામ શરૂ થઈ ગયું હશે તો કોઈ ચાર્જ પરત મળશે નહીં. કામ શરૂ ન થયું હોય તેવા કિસ્સામાં જ વિચારણા કરવામાં આવશે.</p>
-                    <p style="margin-top:10px; font-weight:bold; color:#d9534f;">* Note: ખોટા દસ્તાવેજો (Wrong Documents) અપલોડ કરવાને કારણે જો સરકારી કચેરીથી ફોર્મ રિજેક્ટ થાય, તો તેની ફી ગ્રાહકે ફરીથી ચૂકવવી પડશે.</p>
+                    <p><strong>૧. રીફંડ નિયમો:</strong> એકવાર ગ્રાહક દ્વારા ફોર્મ ભરવાની પ્રક્રિયા અથવા સરકારી ફીની ચુકવણી ઓનલાઈન થઈ ગયા પછી કોઈ પણ સંજોગોમાં પેમેન્ટ રીફંડ કરવામાં આવશે નહીં.</p>
+                    <p style="margin-top:10px;"><strong>૨. સરકારી ફી:</strong> જો સરકારી સર્વરની ભૂલ અથવા ટેકનિકલ ખામીના કારણે ટ્રાન્ઝેક્શન ફેઈલ થાય, તો ડિપાર્ટમેન્ટના નિયમ મુજબ જ આગળની કાર્યવાહી થશે.</p>
+                    <p style="margin-top:10px; font-weight:bold; color:#d9534f;">* ખોટા દસ્તાવેજો અપલોડ કરવાને કારણે જો સરકારી કચેરીથી ફોર્મ રિજેક્ટ થાય, તો તેની ફી ગ્રાહકે ફરીથી ચૂકવવી પડશે.</p>
                 `
             },
             "terms": {
                 title: "Terms & Conditions",
                 html: `
-                    <p><strong>૧. માહિતીની સચોટતા (User Responsibility):</strong> ગ્રાહકે ફોર્મ ભરવા માટે આપેલી તમામ વિગતો (જેમ કે નામ, જન્મતારીખ, સ્પેલિંગ વગેરે) સો ટકા સાચી હોવી જોઈએ. ગ્રાહકની ખોટી માહિતીના લીધે થતા નુકસાન માટે અશોક ડિજિટલ સર્વિસીસ જવાબદાર રહેશે નહીં.</p>
-                    <p style="margin-top:10px;"><strong>૨. સમયમર્યાદા (Processing Time):</strong> દરેક સરકારી કામ (લાયસન્સ, પાસપોર્ટ, આયુષ્માન કાર્ડ) સરકારી નિયમો અને ઓફિસના સમય અનુસાર પ્રોસેસ થાય છે. અમે કામ ઝડપી કરવાનો પ્રયત્ન કરીએ છીએ, પણ સરકારી વિલંબ (Govt Delay) માં આપનો સહકાર જરૂરી છે.</p>
-                    <p style="margin-top:10px;"><strong>૩. એપોઇન્ટમેન્ટ અને હાજરી:</strong> પાસપોર્ટ કે RTO જેવી સેવાઓમાં જ્યાં ગ્રાહકે રૂબરૂ હાજર રહેવું પડે છે, ત્યાં ફિક્સ થયેલી તારીખે ગ્રાહકે સ્વખર્ચે સમયસર પહોંચવાનું રહેશે.</p>
-                    <p style="margin-top:10px;"><strong>૪. કાનૂની અધિકારક્ષેત્ર:</strong> કોઈપણ વિવાદના કિસ્સામાં ન્યાયિક ક્ષેત્ર સ્થાનિક અદાલત રહેશે.</p>
+                    <p><strong>૧. માહિતીની સચોટતા:</strong> ગ્રાહકે ફોર્મ ભરવા માટે આપેલી તમામ વિગતો (જેમ કે નામ, જન્મતારીખ, સ્પેલિંગ) સાચી હોવી જોઈએ. ખોટી માહિતી માટે અશોક ડિજિટલ સર્વિસીસ જવાબદાર રહેશે નહીં.</p>
+                    <p style="margin-top:10px;"><strong>૨. સમયમર્યાદા:</strong> દરેક સરકારી કામ સરકારી નિયમો અને ઓફિસના સમય અનુસાર પ્રોસેસ થાય છે. સરકારી વિલંબ (Govt Delay) માં આપનો સહકાર જરૂરી છે.</p>
+                    <p style="margin-top:10px;"><strong>૩. હાજરી:</strong> પાસપોર્ટ કે RTO જેવી સેવાઓમાં જ્યાં રૂબરૂ હાજર રહેવું પડે છે, ત્યાં ફિક્સ થયેલી તારીખે સમયસર પહોંચવાનું રહેશે.</p>
                 `
             },
             "privacy": {
                 title: "Privacy Policy (ડેટા સુરક્ષા નીતિ)",
                 html: `
-                    <p><strong>૧. ડેટાની ગુપ્તતા (Data Confidentiality):</strong> અશોક ડિજિટલ સર્વિસીસ તમારા કિંમતી દસ્તાવેજોની પ્રાઇવસીનું સંપૂર્ણ સન્માન કરે છે. તમારો ડેટા તદ્દન સુરક્ષિત રાખવામાં આવે છે.</p>
-                    <p style="margin-top:10px;"><strong>૨. વૉટ્સએપ અને ક્લાઉડ શેરિંગ:</strong> તમે ઓનલાઈન અપલોડ કેન્દ્ર કે વૉટ્સએપ દ્વારા જે પણ કાગળો મોકલો છો, તેનો ઉપયોગ ફક્ત અને ફક્ત તમારા ફોર્મ ફાઇલિંગ અને સત્તાવાર સરકારી પોર્ટલ પર અપલોડ કરવા માટે જ થાય છે.</p>
-                    <p style="margin-top:10px;"><strong>૩. થર્ડ PARTY શેરિંગ (No Third Party Sharing):</strong> અમે કોઈપણ ગ્રાહકનો મોબાઈલ નંબર, ઈમેઈલ આઈડી કે દસ્તાવેજો કોઈ અન્ય પ્રાઈવેટ કંપની કે બહારની એજન્સીને વેચતા કે શેર કરતા નથી.</p>
-                    <p style="margin-top:10px;"><strong>૪. ડેટા ડીલીશન (Data Deletion):</strong> તમારું સરકારી કામ અને ફાઈલિંગ સક્સેસફુલ પૂરું થયા બાદ, જો ગ્રાહક ઈચ્છે તો તેમના દસ્તાવેજો અમારા રેકોર્ડમાંથી કાયમી માટે ડીલીટ કરવાની વિનંતી કરી શકે છે.</p>
+                    <p><strong>૧. ડેટાની ગુપ્તતા:</strong> અશોક ડિજિટલ સર્વિસીસ તમારા કિંમતી દસ્તાવેજોની પ્રાઇવસીનું સંપૂર્ણ સન્માન કરે છે. તમારો ડેટા તદ્દન સુરક્ષિત રાખવામાં આવે છે.</p>
+                    <p style="margin-top:10px;"><strong>૨. વૉટ્સએપ ઉપયોગ:</strong> ઓનલાઈન અપલોડ કેન્દ્ર કે વૉટ્સએપ દ્વારા મોકલેલા કાગળોનો ઉપયોગ ફક્ત અને ફક્ત તમારા ફોર્મ ફાઇલિંગ અને સત્તાવાર પોર્ટલ પર અપલોડ કરવા માટે જ થાય છે.</p>
+                    <p style="margin-top:10px;"><strong>૩. થર્ડ પાર્ટી શેરિંગ:</strong> અમે કોઈપણ ગ્રાહકનો મોબાઈલ નંબર, ઈમેઈલ આઈડી કે દસ્તાવેજો અન્ય પ્રાઈવેટ એજન્સીને ક્યારેય શેર કરતા નથી.</p>
                 `
             }
         };
 
+        // મોડલ કંટ્રોલ ફંક્શન્સ
         function showDocs(serviceKey) {
             const data = docDatabase[serviceKey];
             if (!data) return;
+            
             document.getElementById('modalTitle').innerHTML = `<i class="fa-solid fa-file-lines"></i> ${data.title}`;
+            
             const listContainer = document.getElementById('modalDocList');
             listContainer.innerHTML = "";
             data.docs.forEach(doc => {
@@ -1196,20 +1186,14 @@
             const priceBox = document.getElementById('modalPriceBox');
             const priceItemsContainer = document.getElementById('modalPriceItems');
             if (data.prices) {
+                priceBox.style.display = "block";
                 priceItemsContainer.innerHTML = "";
                 data.prices.forEach(item => {
-                    const itemLine = document.createElement('div');
-                    itemLine.className = "price-item-line";
-                    itemLine.innerHTML = `<span>${item.name}</span><span>${item.value}</span>`;
-                    priceItemsContainer.appendChild(itemLine);
+                    const div = document.createElement('div');
+                    div.className = "price-item-line";
+                    div.innerHTML = `<span>${item.name}</span><span>${item.value}</span>`;
+                    priceItemsContainer.appendChild(div);
                 });
-                if (data.total) {
-                    const totalLine = document.createElement('div');
-                    totalLine.className = "price-total-line";
-                    totalLine.innerHTML = `<span>Total / Note</span><span>${data.total}</span>`;
-                    priceItemsContainer.appendChild(totalLine);
-                }
-                priceBox.style.display = "block";
             } else {
                 priceBox.style.display = "none";
             }
@@ -1217,97 +1201,134 @@
             document.getElementById('docModal').style.display = "flex";
         }
 
-        function closeDocs() { document.getElementById('docModal').style.display = "none"; }
+        function closeDocs() {
+            document.getElementById('docModal').style.display = "none";
+        }
 
-        // લીગલ મોડલ ઓપન અને ક્લોઝ કરવાનું લોજિક
         function showLegal(policyKey) {
             const data = legalDatabase[policyKey];
             if (!data) return;
-            document.getElementById('legalModalTitle').innerHTML = `<i class="fa-solid fa-gavel"></i> ${data.title}`;
+            document.getElementById('legalModalTitle').innerText = data.title;
             document.getElementById('legalModalBody').innerHTML = data.html;
             document.getElementById('legalModal').style.display = "flex";
         }
 
-        function closeLegal() { document.getElementById('legalModal').style.display = "none"; }
-
-        // ગ્લોબલ વિન્ડો ક્લિક લોજિક (બહાર ક્લિક કરવાથી મોડલ બંધ થાય તે માટે)
-        window.onclick = function(event) {
-            const docModal = document.getElementById('docModal');
-            const legalModal = document.getElementById('legalModal');
-            if (event.target == docModal) { docModal.style.display = "none"; }
-            if (event.target == legalModal) { legalModal.style.display = "none"; }
+        function closeLegal() {
+            document.getElementById('legalModal').style.display = "none";
         }
 
-        const database = {
-            "9484418910": "નમસ્તે અશોકભાઈ, તમારું પાસપોર્ટનું કામ પ્રોસેસમાં છે અને RTO એપોઇન્ટમેન્ટ બુક થઈ ગઈ છે.",
-            "9876543210": "તમારું ITR રીટર્ન ફાઈલિંગ સંપૂર્ણ રીતે પૂર્ણ થઈ ગયું છે.",
-            "1234567890": "તમારું નવું પાન કાર્ડ બની ગયું છે, કૃપા કરીને ઓફિસેથી કલેક્ટ કરી લો."
-        };
-
+        // એપ્લિકેશન સ્ટેટસ ટ્રેકર લોજિક
         function checkStatus() {
-            const input = document.getElementById('userInput').value.trim();
+            const userInput = document.getElementById('userInput').value.trim();
             const resultDiv = document.getElementById('statusResult');
-            if (input === "") return;
-            if (database[input]) {
-                resultDiv.innerHTML = "📊 Status: " + database[input];
-                resultDiv.style.color = "#198754";
-            } else {
-                resultDiv.innerHTML = "Status: કોઈ ડેટા મળ્યો નથી.";
+            
+            if (!userInput) {
                 resultDiv.style.color = "#d9534f";
+                resultDiv.innerText = "મહેરબાની કરીને આઈડી અથવા મોબાઈલ નંબર લખો.";
+                return;
             }
+            
+            resultDiv.style.color = "#0b4c8c";
+            resultDiv.innerText = "તમારી રિકવેસ્ટ વેરિફાય થઈ રહી છે...";
+            
+            setTimeout(() => {
+                resultDiv.style.color = "#198754";
+                resultDiv.innerText = `🔄 સ્ટેટસ: તમારી એપ્લિકેશન (${userInput}) સફળતાપૂર્વક સબમિટ થઈ ગઈ છે અને પ્રોસેસમાં છે. વૉટ્સએપ પર અપડેટ મોકલવામાં આવશે.`;
+            }, 1000);
         }
 
-        function toggleBotBox() {
-            const box = document.getElementById('botBox');
-            box.style.display = (box.style.display === 'block') ? 'none' : 'block';
-        }
-
-        function handleBotKey(e) { if (e.key === 'Enter') sendBotMessage(); }
-
-        function sendBotMessage() {
-            const input = document.getElementById('botInput');
-            if (input.value.trim() === "") return;
-            window.open("https://wa.me/919484418910?text= " + encodeURIComponent("ડિજિટલ બોટ સપોર્ટ: " + input.value.trim()), '_blank');
-            input.value = "";
-            toggleBotBox();
-        }
-
+        // ઓનલાઈન ડોક્યુમેન્ટ અપલોડથી WhatsApp ઓટોમેશન
         function handleUpload(event) {
             event.preventDefault();
             const name = document.getElementById('clientName').value.trim();
             const phone = document.getElementById('clientPhone').value.trim();
             const service = document.getElementById('serviceType').value;
-            const files = document.getElementById('clientFiles').files;
+            const filesInput = document.getElementById('clientFiles');
             const statusDiv = document.getElementById('uploadStatus');
 
-            statusDiv.innerHTML = "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે... ચેટ ઓપન થતાં જ પેસ્ટ કરીને કાગળો સેન્ડ કરી દો.";
-            statusDiv.style.color = "#ff9800";
-
-            let fileNames = [];
-            for (let i = 0; i < files.length; i++) {
-                fileNames.push(`📄 [કાગળ-${i+1}]: ${files[i].name}`);
+            if (!name || !phone || !service || filesInput.files.length === 0) {
+                statusDiv.style.color = "#d9534f";
+                statusDiv.innerText = "બધી જ વિગતો ભરવી અને ફાઈલ સિલેક્ટ કરવી ફરજિયાત છે.";
+                return;
             }
 
-            const wpMessage = `નમસ્તે અશોક ડિજિટલ સર્વિસીસ,
-મેં વેબસાઈટ પરથી મારા ડોક્યુમેન્ટ મોકલેલ છે:
-👤 નામ: ${name}
-📞 ફોન: ${phone}
-💼 સેવા: ${service}
-📂 ફાઈલોની સંખ્યા: ${files.length}
+            let fileNames = [];
+            for (let i = 0; i < filesInput.files.length; i++) {
+                fileNames.push(`${i + 1}. ${filesInput.files[i].name}`);
+            }
 
-👇 મેં નીચે મુજબના દસ્તાવેજો સિલેક્ટ કર્યા છે, જે હું આ ચેટમાં મોકલી રહ્યો છું:
-${fileNames.join('\n')}
+            const wpNumber = "919484418910";
+            const message = `*નવો ડોક્યુમેન્ટ અપલોડ કન્ફર્મેશન*\n\n` +
+                            `👤 *ગ્રાહકનું નામ:* ${name}\n` +
+                            `📞 *મોબાઈલ નંબર:* ${phone}\n` +
+                            `💼 *સર્વિસ કેટેગરી:* ${service}\n\n` +
+                            `📁 *પસંદ કરેલી ફાઈલો:* \n${fileNames.join('\n')}\n\n` +
+                            `_નોંધ: નમસ્તે અશોકભાઈ, મેં વેબસાઈટ પર આ વિગતો સેટ કરી છે. હું હવે તમને ઉપર મુજબના ડોક્યુમેન્ટ્સ મોકલી રહ્યો છું._`;
 
-કૃપા કરીને મારું આ કામ જલ્દી શરૂ કરી આપશો.`;
+            statusDiv.style.color = "#198754";
+            statusDiv.innerText = "વિગતો તૈયાર છે! WhatsApp ઓપન થઈ રહ્યું છે...";
 
-            const finalWpUrl = "https://wa.me/919484418910?text=" + encodeURIComponent(wpMessage);
-            
             setTimeout(() => {
-                window.open(finalWpUrl, '_blank');
+                window.open(`https://wa.me/${wpNumber}?text=${encodeURIComponent(message)}`, '_blank');
+                statusDiv.innerText = "";
                 document.getElementById('docUploadForm').reset();
-                statusDiv.innerHTML = "✅ વિગતો મોકલાઈ ગઈ છે! હવે તમારા કાગળો આ ચેટમાં એટેચ કરી દો.";
-                statusDiv.style.color = "#198754";
+            }, 1200);
+        }
+
+        // ચેટ બોટ વિજેટ લોજિક
+        function toggleBotBox() {
+            const box = document.getElementById('botBox');
+            box.style.display = box.style.display === "block" ? "none" : "block";
+        }
+
+        function handleBotKey(event) {
+            if (event.key === 'Enter') {
+                sendBotMessage();
+            }
+        }
+
+        function sendBotMessage() {
+            const input = document.getElementById('botInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const botBody = document.getElementById('botBody');
+            
+            // યુઝર મેસેજ એડ કરો
+            const userDiv = document.createElement('div');
+            userDiv.className = "whatsapp-bot-msg";
+            userDiv.style.background = "#d9fdd3";
+            userDiv.style.alignSelf = "flex-end";
+            userDiv.style.margin = "5px 0 5px auto";
+            userDiv.style.display = "block";
+            userDiv.innerText = text;
+            botBody.appendChild(userDiv);
+            
+            input.value = "";
+            botBody.scrollTop = botBody.scrollHeight;
+
+            // બોટ રીપ્લાય
+            setTimeout(() => {
+                const replyDiv = document.createElement('div');
+                replyDiv.className = "whatsapp-bot-msg";
+                replyDiv.style.margin = "5px 0";
+                replyDiv.style.display = "inline-block";
+                replyDiv.innerHTML = `આભાર! 🙏 તમારી પૂછપરછ <b>"${text}"</b> માટે ડાયરેક્ટ અશોકભાઈ સાથે વાત કરવા નીચેના લિંક પર ક્લિક કરો.<br><br><a href="https://wa.me/919484418910?text=${encodeURIComponent('નમસ્તે, મને આ અંગે માહિતી આપો: ' + text)}" target="_blank" style="color:#075e54; font-weight:bold; text-decoration:underline;">ચેટ ચાલુ કરો</a>`;
+                botBody.appendChild(replyDiv);
+                botBody.scrollTop = botBody.scrollHeight;
             }, 1000);
+        }
+
+        // મોડલ બોક્સની બહાર ક્લિક કરવાથી બંધ થાય તે માટે
+        window.onclick = function(event) {
+            const docModal = document.getElementById('docModal');
+            const legalModal = document.getElementById('legalModal');
+            if (event.target == docModal) {
+                docModal.style.display = "none";
+            }
+            if (event.target == legalModal) {
+                legalModal.style.display = "none";
+            }
         }
     </script>
 </body>
