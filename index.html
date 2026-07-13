@@ -234,10 +234,8 @@
             font-weight: 600;
             color: var(--text-main);
         }
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.6; }
-            100% { opacity: 1; }
+        @marquee-style {
+            transition: 0.3s;
         }
 
         /* Hero Section with Full Photo Background */
@@ -668,7 +666,7 @@
                 </ul>
             </div>
             <div class="smart-card">
-                <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ડિજિટલ ઓર્ગેનાઇઝેશન</h3>
+                <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ડિજिटल ઓર્ગેનાઇઝેશન</h3>
                 <p>તમારી મહત્વની સંપત્તિઓ, દસ્તાવેજો અને ફાઈલિંગના ડેટાને અમે એકદમ આધુનિક પદ્ધતિથી સુરક્ષિત કરીએ છીએ:</p>
                 <ul>
                     <li><strong>સુરક્ષિત ડેટાબેઝ:</strong> ગ્રાહકોના મહત્વના આઈડી પ્રૂફ અને રેકોર્ડ્સ સંપૂર્ણ ગુપ્ત અને સેફ રહે છે.</li>
@@ -847,8 +845,12 @@
                     <option value="PF_ESIC">PF & ESIC Consultancy</option>
                     <option value="Driving_License">ડ્રાઈવિંગ લાયસન્સ</option>
                     <option value="PAN">પાન કાર્ડ</option>
-                    <option value="ITR">ITR રિટર્ન / TDS ફાઈલ</option>
-                    <option value="Other">અન્ય સરકારી ફોર્મ</option>
+                    <option value="Light_Bill">લાઇટ બિલમાં નામ ચેન્જ</option>
+                    <option value="Voter">વોટર આઈડી (Voter Card)</option>
+                    <option value="E-Shram">ઈ-શ્રમ કાર્ડ (E-Shram)</option>
+                    <option value="Govt_Forms">ઓનલાઈન સરકારી ફોર્મ</option>
+                    <option value="ITR">ITR રીટર્ન ફાઈલિંગ</option>
+                    <option value="Ration_Card">રેશન કાર્ડનું કામકાજ</option>
                 </select>
                 <div class="file-input-wrapper">
                     <i class="fa-regular fa-file-pdf" style="font-size: 2.5rem; color: #0b4c8c;"></i>
@@ -872,7 +874,7 @@
             </div>
             <div class="review-card">
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p>"લાઇટ બિલમાં નામ બદલવાનું કામ ઘરે બેઠા જ થઈ ગયું. ક્યાંય ધક્કા ખાવા ન પડ્યા. બહુ જ ફાસ્ટ ડિજिटल સર્વિસ છે!"</p>
+                <p>"લાઇટ બિલમાં નામ બદલવાનું કામ ઘરે બેઠા જ થઈ ગયું. ક્યાંય ધક્કા ખાવા ન પડ્યા. બહુ જ ફાસ્ટ ડિજિટલ સર્વિસ છે!"</p>
                 <div class="reviewer-name">- સંજય શાહ, આણંદ</div>
             </div>
             <div class="review-card">
@@ -1016,12 +1018,12 @@
             }
         });
 
-        // જરૂરી ડોક્યુમેન્ટ્સ અને કિંમતોનો પાકો ડેટાબેઝ
+        // જરૂરી ડોક્યુમેન્ટ્સનો પાકો ડેટાબેઝ
         const docDatabase = {
             "ayushman": {
                 title: "આયુષ્માન ભારત કાર્ડ માટે જરૂરી કાગળો",
                 docs: ["આધાર કાર્ડ", "રેશન કાર્ડ (નવું અપડેટ કરેલું)", "મોબાઈલ નંબર (આધાર સાથે લિંક હોય તે)"],
-                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "官150" }]
+                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹150" }]
             },
             "msme": {
                 title: "MSME રજીસ્ટ્રેશન માટે જરૂરી કાગળો",
@@ -1036,50 +1038,50 @@
             "passport": {
                 title: "પાસપોર્ટ એપ્લિકેશન માટે જરૂરી કાગળો",
                 docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ (LC) અથવા જન્મનો દાખલો", "છેલ્લી શૈક્ષણિક લાયકાતની માર્કશીટ (Non-ECR માટે)", "બેંક પાસબુક અથવા લાઇટ બિલ (સરનામાના પુરાવા માટે)"],
-                prices: [{ name: "ટોટલ ચાર્જ (Total Fees)", value: "官3000" }]
+                prices: [{ name: "ટોટલ ચાર્જ (Total Fees)", value: "₹3000" }]
             },
             "pf_esic": {
                 title: "PF & ESIC ના કામ માટે જરૂરી કાગળો",
                 docs: ["UAN નંબર અને પાસવર્ડ", "આધાર કાર્ડ અને પાન કાર્ડ", "બેંક એકાઉન્ટ વિગતો (ચેક અથવા પાસબુક)", "કંપનીમાંથી છૂટા થયા તારીખ (Exit Date - જો ઉપાડવું હોય તો)"],
                 prices: [
-                    { name: "KYC અપડેટ", value: "官150" },
-                    { name: "PF ઉપાડવું (Withdraw)", value: "官250" },
-                    { name: "જૂની કંપનીના પૈસા નવી કંપનીમાં લાવવા", value: "官100" }
+                    { name: "KYC અપડેટ", value: "₹150" },
+                    { name: "PF ઉપાડવું (Withdraw)", value: "₹250" },
+                    { name: "જૂની કંપનીના પૈસા નવી કંપનીમાં લાવવા", value: "₹100" }
                 ],
-                total: "官500"
+                total: "₹500"
             },
             "driving": {
                 title: "ડ્રાઈવિંગ લાયસન્સ માટે જરૂરી કાગળો",
                 docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ (LC) અથવા જન્મનો દાખલો", "બ્લડ ગ્રુપ રિપોર્ટ (લાયસન્સ કેટેગરી મુજબ)", "પાસપોર્ટ સાઇઝ ફોટો"],
                 prices: [
-                    { name: "2 વ્હીલર (Two Wheeler)", value: "官1150" },
-                    { name: "4 વ્હીલર (Four Wheeler)", value: "官1350" },
-                    { name: "2 & 4 વ્હીલર બન્ને (Both)", value: "官1800" }
+                    { name: "2 વ્હીલર (Two Wheeler)", value: "₹1150" },
+                    { name: "4 વ્હીલર (Four Wheeler)", value: "₹1350" },
+                    { name: "2 & 4 વ્હીલર બન્ને (Both)", value: "₹1800" }
                 ],
                 total: "બાકી વિગતો તમારા કામ પર આધાર રાખે છે"
             },
             "pan": {
                 title: "પાન કાર્ડ બનાવવા માટે જરૂરી કાગળો",
                 docs: ["આધાર કાર્ડ (નામ અને જન્મતારીખ સાચી હોવી જરૂરી)", "મોબાઈલ નંબર", "૨ પાસપોર્ટ સાઇઝ ફોટો"],
-                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "官307" }]
+                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹307" }]
             },
             "light_bill": {
                 title: "લાઇટ બિલમાં નામ ચેન્જ કરવાના કાગળો",
                 docs: ["છેલ્લું લાઇટ બિલ", "નવા માલિકનું આધાર કાર્ડ અને પાન કાર્ડ", "મકાન વેચાણ દસ્તાવેજ અથવા હક્ક પત્રક/વારસાઈ પ્રમાણપત્ર", "પેઢી/સોસાયટીનું NOC સર્ટિફિકેટ"],
                 prices: [
-                    { name: "ફાઈલ ચાર્જ (File Charge)", value: "官1000" },
+                    { name: "ફાઈલ ચાર્જ (File Charge)", value: "₹1000" },
                     { name: "સરકારી ચાર્જ (Govt Charge)", value: "કામ પર આધાર રાખે છે" }
                 ]
             },
             "voter": {
                 title: "ચૂંટણી કાર્ડ (Voter ID) માટે જરૂરી કાગળો",
                 docs: ["આધાર કાર્ડ", "રહેઠાણનો પુરાવો (લાઇટ બિલ અથવા રેશન કાર્ડ)", "જન્મનો પુરાવો (LC અથવા માર્કશીટ)", "૧ પાસપોર્ટ સાઇઝ કલર ફોટો"],
-                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "官150" }]
+                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹150" }]
             },
             "eshram": {
                 title: "ઈ-શ્રમ કાર્ડ બનાવવા માટે જરૂરી કાગળો",
                 docs: ["આધાર કાર્ડ", "બેંક એકાઉન્ટ પાસબુક", "આધાર સાથે લિંક હોય તેવો ચાલુ મોબાઈલ નંબર"],
-                prices: [{ name: "નવું રજીસ્ટ્રેશન (New Registration)", value: "官100" }]
+                prices: [{ name: "નવું રજીસ્ટ્રેશન (New Registration)", value: "₹100" }]
             },
             "govt_forms": {
                 title: "સરકારી ફોર્મ ભરવા માટે સામાન્ય કાગળો",
@@ -1090,8 +1092,8 @@
                 title: "ITR રિટર્ન ફાઈલિંગ માટે જરૂરી કાગળો",
                 docs: ["પાન કાર્ડ અને આધાર કાર્ડ", "Form 16 (જો નોકરી કરતા હોય)", "બેંક એકાઉન્ટ સ્ટેટમેન્ટ (આખા વર્ષનું)", "બિઝનેસની આવક-જાવક અને લોનની વિગતો"],
                 prices: [
-                    { name: "ITR ફાઇલિંગ (Normal ITR)", value: "官750" },
-                    { name: "ITR + TDS રીટર્ન (With TDS Return)", value: "官2000" }
+                    { name: "ITR ફાઇલિંગ (Normal ITR)", value: "₹750" },
+                    { name: "ITR + TDS રીટર્ન (With TDS Return)", value: "₹2000" }
                 ]
             },
             "ration": {
@@ -1186,7 +1188,7 @@
             const files = document.getElementById('clientFiles').files;
             const statusDiv = document.getElementById('uploadStatus');
 
-            statusDiv.innerHTML = "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે... ચેટ ઓપન થતાં જ પેસ્ટ કરીને કાગળો સેન્ડ કરી દો.";
+            statusDiv.innerHTML = "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે... ચેટ ઓપન થતાં j પેસ્ટ કરીને કાગળો સેન્ડ કરી દો.";
             statusDiv.style.color = "#ff9800";
 
             let fileNames = [];
@@ -1216,7 +1218,7 @@ ${fileNames.join('\n')}
             }, 1000);
         }
 
-        // નવી ૧૦૦% સુધારેલી સુપર પાવરફુલ લેંગ્વેજ સિસ્ટમ
+        // નવી અને ફોર્સફુલ ભાષા બદલવાની સિસ્ટમ (વિથ ઓટો-ક્લીનઅપ)
         function changeLanguage(langCode) {
             if (langCode === 'gu') {
                 // ગુજરાતી ભાષા માટે ટ્રાન્સલેશન કુકીઝ સંપૂર્ણ સાફ કરો જેથી ઓરિજિનલ પેજ લોડ થાય
@@ -1230,7 +1232,6 @@ ${fileNames.join('\n')}
                 document.cookie = "googtrans=/gu/" + langCode + "; path=/; domain=.github.io";
             }
             
-            // ઓફિશિયલ ગૂગલ ટ્રાન્સલેટ ડ્રોપડાઉનને પણ અપડેટ કરો
             var translateSelect = document.querySelector('select.goog-te-combo');
             if (translateSelect) {
                 translateSelect.value = langCode;
@@ -1240,7 +1241,6 @@ ${fileNames.join('\n')}
                     translateSelect.fireEvent('onchange');
                 }
             }
-            // સચોટ ભાષા બદલવા માટે પેજ રીફ્રેશ કરો
             location.reload();
         }
 
