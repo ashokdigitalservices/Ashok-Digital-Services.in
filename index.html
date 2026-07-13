@@ -955,11 +955,29 @@
         </div>
     </div>
 
+    <!-- લીગલ પોલીસી દર્શાવવા માટેનું કસ્ટમ પોપ-અપ મોડલ બોક્સ -->
+    <div id="legalModal" class="custom-modal">
+        <div class="custom-modal-content" style="max-width: 650px;">
+            <span class="custom-modal-close" onclick="closeLegal()">&times;</span>
+            <div id="legalModalTitle" class="custom-modal-title">પોલીસી વિગતો</div>
+            <div id="legalModalBody" style="max-height: 400px; overflow-y: auto; font-size: 0.95rem; text-align: left; padding-right: 10px; color: var(--text-main);">
+                <!-- વિગતો અહીં લોડ થશે -->
+            </div>
+            <button class="btn-modal-action" onclick="closeLegal()" style="width: 100%; margin-top: 20px;">હું સહમત છું (I Agree)</button>
+        </div>
+    </div>
+
     <!-- છુપાયેલું એલિમેન્ટ જ્યાં ગૂગલ પોતાનું ટ્રાન્સલેટ ડ્રોપડાઉન બનાવશે -->
     <div id="google_translate_element"></div>
 
     <footer>
         <p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>
+        <!-- નવી લીગલ કંડિશન લિંક્સ ફૂટરમાં ઉમેરી છે -->
+        <div style="margin-top: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="javascript:void(0)" onclick="showLegal('refund')" style="color: #ffda6a; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Refund & Cancellation Policy</a>
+            <a href="javascript:void(0)" onclick="showLegal('terms')" style="color: #ffda6a; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Terms & Conditions</a>
+            <a href="javascript:void(0)" onclick="showLegal('privacy')" style="color: #ffda6a; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Privacy Policy</a>
+        </div>
     </footer>
 
     <!-- Mobile Navigation Fixed Bottom Bar -->
@@ -1132,6 +1150,37 @@
             }
         };
 
+        // લીગલ પોલીસીનો ડેટાબેઝ
+        const legalDatabase = {
+            "refund": {
+                title: "Refund & Cancellation Policy",
+                html: `
+                    <p><strong>૧. રીફંડ નિયમો (Refund Rules):</strong> એકવાર ગ્રાહક દ્વારા ફોર્મ ભરવાની પ્રક્રિયા (Data Entry) અથવા સરકારી ફીની ચુકવણી ઓનલાઈન થઈ ગયા પછી કોઈ પણ સંજોગોમાં પેમેન્ટ રીફંડ કરવામાં આવશે નહીં.</p>
+                    <p style="margin-top:10px;"><strong>૨. સરકારી ફી (Government Fees):</strong> જો સરકારી સર્વરની ભૂલ અથવા ટેકનિકલ ખામીના કારણે ટ્રાન્ઝેક્શન ફેઈલ થાય, તો ડિપાર્ટમેન્ટના નિયમ મુજબ જ આગળની કાર્યવાહી થશે. તેમાં અમારી કોઈ વ્યક્તિગત જવાબદારી રહેશે નહીં.</p>
+                    <p style="margin-top:10px;"><strong>૩. ઓર્ડર કેન્સલેશન (Cancellation):</strong> જો તમે કોઈ કામ આપ્યા બાદ તેને અધવચ્ચેથી કેન્સલ કરવા માંગો છો, તો જો કામ શરૂ થઈ ગયું હશે તો કોઈ ચાર્જ પરત મળશે નહીં. કામ શરૂ ન થયું હોય તેવા કિસ્સામાં જ વિચારણા કરવામાં આવશે.</p>
+                    <p style="margin-top:10px; font-weight:bold; color:#d9534f;">* Note: ખોટા દસ્તાવેજો (Wrong Documents) અપલોડ કરવાને કારણે જો સરકારી કચેરીથી ફોર્મ રિજેક્ટ થાય, તો તેની ફી ગ્રાહકે ફરીથી ચૂકવવી પડશે.</p>
+                `
+            },
+            "terms": {
+                title: "Terms & Conditions",
+                html: `
+                    <p><strong>૧. માહિતીની સચોટતા (User Responsibility):</strong> ગ્રાહકે ફોર્મ ભરવા માટે આપેલી તમામ વિગતો (જેમ કે નામ, જન્મતારીખ, સ્પેલિંગ વગેરે) સો ટકા સાચી હોવી જોઈએ. ગ્રાહકની ખોટી માહિતીના લીધે થતા નુકસાન માટે અશોક ડિજિટલ સર્વિસીસ જવાબદાર રહેશે નહીં.</p>
+                    <p style="margin-top:10px;"><strong>૨. સમયમર્યાદા (Processing Time):</strong> દરેક સરકારી કામ (લાયસન્સ, પાસપોર્ટ, આયુષ્માન કાર્ડ) સરકારી નિયમો અને ઓફિસના સમય અનુસાર પ્રોસેસ થાય છે. અમે કામ ઝડપી કરવાનો પ્રયત્ન કરીએ છીએ, પણ સરકારી વિલંબ (Govt Delay) માં આપનો સહકાર જરૂરી છે.</p>
+                    <p style="margin-top:10px;"><strong>૩. એપોઇન્ટમેન્ટ અને હાજરી:</strong> પાસપોર્ટ કે RTO જેવી સેવાઓમાં જ્યાં ગ્રાહકે રૂબરૂ હાજર રહેવું પડે છે, ત્યાં ફિક્સ થયેલી તારીખે ગ્રાહકે સ્વખર્ચે સમયસર પહોંચવાનું રહેશે.</p>
+                    <p style="margin-top:10px;"><strong>૪. કાનૂની અધિકારક્ષેત્ર:</strong> કોઈપણ વિવાદના કિસ્સામાં ન્યાયિક ક્ષેત્ર સ્થાનિક અદાલત રહેશે.</p>
+                `
+            },
+            "privacy": {
+                title: "Privacy Policy (ડેટા સુરક્ષા નીતિ)",
+                html: `
+                    <p><strong>૧. ડેટાની ગુપ્તતા (Data Confidentiality):</strong> અશોક ડિજિટલ સર્વિસીસ તમારા કિંમતી દસ્તાવેજોની પ્રાઇવસીનું સંપૂર્ણ સન્માન કરે છે. તમારો ડેટા તદ્દન સુરક્ષિત રાખવામાં આવે છે.</p>
+                    <p style="margin-top:10px;"><strong>૨. વૉટ્સએપ અને ક્લાઉડ શેરિંગ:</strong> તમે ઓનલાઈન અપલોડ કેન્દ્ર કે વૉટ્સએપ દ્વારા જે પણ કાગળો મોકલો છો, તેનો ઉપયોગ ફક્ત અને ફક્ત તમારા ફોર્મ ફાઇલિંગ અને સત્તાવાર સરકારી પોર્ટલ પર અપલોડ કરવા માટે જ થાય છે.</p>
+                    <p style="margin-top:10px;"><strong>૩. થર્ડ PARTY શેરિંગ (No Third Party Sharing):</strong> અમે કોઈપણ ગ્રાહકનો મોબાઈલ નંબર, ઈમેઈલ આઈડી કે દસ્તાવેજો કોઈ અન્ય પ્રાઈવેટ કંપની કે બહારની એજન્સીને વેચતા કે શેર કરતા નથી.</p>
+                    <p style="margin-top:10px;"><strong>૪. ડેટા ડીલીશન (Data Deletion):</strong> તમારું સરકારી કામ અને ફાઈલિંગ સક્સેસફુલ પૂરું થયા બાદ, જો ગ્રાહક ઈચ્છે તો તેમના દસ્તાવેજો અમારા રેકોર્ડમાંથી કાયમી માટે ડીલીટ કરવાની વિનંતી કરી શકે છે.</p>
+                `
+            }
+        };
+
         function showDocs(serviceKey) {
             const data = docDatabase[serviceKey];
             if (!data) return;
@@ -1169,9 +1218,24 @@
         }
 
         function closeDocs() { document.getElementById('docModal').style.display = "none"; }
+
+        // લીગલ મોડલ ઓપન અને ક્લોઝ કરવાનું લોજિક
+        function showLegal(policyKey) {
+            const data = legalDatabase[policyKey];
+            if (!data) return;
+            document.getElementById('legalModalTitle').innerHTML = `<i class="fa-solid fa-gavel"></i> ${data.title}`;
+            document.getElementById('legalModalBody').innerHTML = data.html;
+            document.getElementById('legalModal').style.display = "flex";
+        }
+
+        function closeLegal() { document.getElementById('legalModal').style.display = "none"; }
+
+        // ગ્લોબલ વિન્ડો ક્લિક લોજિક (બહાર ક્લિક કરવાથી મોડલ બંધ થાય તે માટે)
         window.onclick = function(event) {
-            const modal = document.getElementById('docModal');
-            if (event.target == modal) { modal.style.display = "none"; }
+            const docModal = document.getElementById('docModal');
+            const legalModal = document.getElementById('legalModal');
+            if (event.target == docModal) { docModal.style.display = "none"; }
+            if (event.target == legalModal) { legalModal.style.display = "none"; }
         }
 
         const database = {
@@ -1248,4 +1312,3 @@ ${fileNames.join('\n')}
     </script>
 </body>
 </html>
-
