@@ -234,10 +234,8 @@
             font-weight: 600;
             color: var(--text-main);
         }
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.6; }
-            100% { opacity: 1; }
+        @marquee-style {
+            transition: 0.3s;
         }
 
         /* Hero Section with Full Photo Background */
@@ -668,7 +666,7 @@
                 </ul>
             </div>
             <div class="smart-card">
-                <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ડિજિટલ ઓર્ગેનાઇઝેશન</h3>
+                <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ડિજिटल ઓર્ગેનાઇઝેશન</h3>
                 <p>તમારી મહત્વની સંપત્તિઓ, દસ્તાવેજો અને ફાઈલિંગના ડેટાને અમે એકદમ આધુનિક પદ્ધતિથી સુરક્ષિત કરીએ છીએ:</p>
                 <ul>
                     <li><strong>સુરક્ષિત ડેટાબેઝ:</strong> ગ્રાહકોના મહત્વના આઈડી પ્રૂફ અને રેકોર્ડ્સ સંપૂર્ણ ગુપ્ત અને સેફ રહે છે.</li>
@@ -698,7 +696,7 @@
             <!-- 2. MSME -->
             <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-building-shield"></i></div>
-                <h3>MSME ઉદ્યોગ આધાર رજીસ્ટ્રેશન</h3>
+                <h3>MSME ઉદ્યોગ આધાર રજીસ્ટ્રેશન</h3>
                 <p>તમારા નવા કે જૂના બિઝનેસ, દુકાન અથવા નાના ઉદ્યોગ માટે Udyam (MSME) સર્ટિફિકેટ ઘરે બેઠા મેળવો.</p>
                 <div class="card-action-buttons">
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20MSME%20ઉદ્યોગ%20આધાર%20અહીં%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
@@ -735,7 +733,7 @@
                 <p>PF અને ESIC ના રિટર્ન ભરવા, PF ઉપાડવું, એડવાન્સ મની, ESIC ક્લેમ, KYC અપડેટ અને રજીસ્ટ્રેશન.</p>
                 <div class="card-action-buttons">
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20PF%20and%20ESIC%20Consultancy%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
-                    <button onclick="showDocs('pf_esic')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ & ફી</button>
+                    <button onclick="showDocs('pf_esic')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
 
@@ -820,7 +818,7 @@
             <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-wheat-awn"></i></div>
                 <h3>રેશન કાર્ડનું કામકાજ</h3>
-                <p>રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું, નવું رેશન કાર્ડ બનાવવું અથવા અલગ કરવું.</p>
+                <p>રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું, નવું રેશન કાર્ડ બનાવવું અથવા અલગ કરવું.</p>
                 <div class="card-action-buttons">
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20રેશન%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('ration')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
@@ -847,8 +845,12 @@
                     <option value="PF_ESIC">PF & ESIC Consultancy</option>
                     <option value="Driving_License">ડ્રાઈવિંગ લાયસન્સ</option>
                     <option value="PAN">પાન કાર્ડ</option>
-                    <option value="ITR">ITR રિટર્ન / TDS ફાઈલ</option>
-                    <option value="Other">અન્ય સરકારી ફોર્મ</option>
+                    <option value="Light_Bill">લાઇટ બિલમાં નામ ચેન્જ</option>
+                    <option value="Voter">વોટર આઈડી (Voter Card)</option>
+                    <option value="E-Shram">ઈ-શ્રમ કાર્ડ (E-Shram)</option>
+                    <option value="Govt_Forms">ઓનલાઈન સરકારી ફોર્મ</option>
+                    <option value="ITR">ITR રીટર્ન ફાઈલિંગ</option>
+                    <option value="Ration_Card">રેશન કાર્ડનું કામકાજ</option>
                 </select>
                 <div class="file-input-wrapper">
                     <i class="fa-regular fa-file-pdf" style="font-size: 2.5rem; color: #0b4c8c;"></i>
@@ -1020,61 +1022,84 @@
         const docDatabase = {
             "ayushman": {
                 title: "આયુષ્માન ભારત કાર્ડ માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "રેશન કાર્ડ (નવું અપડેટ કરેલું)", "મોબાઈલ નંબર (આધાર સાથે લિંક હોય તે)"]
+                docs: ["આધાર કાર્ડ", "રેશન કાર્ડ (નવું અપડેટ કરેલું)", "મોબાઈલ નંબર (આધાર સાથે લિંક હોય તે)"],
+                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹150" }]
             },
             "msme": {
                 title: "MSME રજીસ્ટ્રેશન માટે જરૂરી કાગળો",
-                docs: ["માલિકનું આધાર કાર્ડ", "માલિકનું પાન કાર્ડ", "બિઝનેસ/દુકાનનું નામ અને સરનામું", "બેંક એકાઉન્ટ પાસબુક અથવા કેન્સલ ચેક"]
+                docs: ["માલિકનું આધાર કાર્ડ", "માલિકનું પાન કાર્ડ", "બિઝનેસ/દુકાનનું નામ અને સરનામું", "બેંક એકાઉન્ટ પાસબુક અથવા કેન્સલ ચેક"],
+                prices: [{ name: "સર્વિસ ચાર્જ (Service Charge)", value: "કામ પર આધાર રાખે છે" }]
             },
             "shopact": {
                 title: "ગુમાસ્તા ધારો / શોપ એક્ટ માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ અને પાન કાર્ડ", "દુકાન/ઓફિસનો લાઇટ બિલ", "દુકાન માલિકીની ન હોય તો ભાડાકરાર (Rent Agreement)", "દુકાનના બોર્ડ સાથેનો માલિકનો ફોટો"]
+                docs: ["આધાર કાર્ડ અને પાન કાર્ડ", "દુકાન/ઓફિસનો લાઇટ બિલ", "દુકાન માલિકીની ન હોય તો ભાડાકરાર (Rent Agreement)", "દુકાનના બોર્ડ સાથેનો માલિકનો ફોટો"],
+                prices: [{ name: "સર્વિસ ચાર્જ (Service Charge)", value: "કામ પર આધાર રાખે છે" }]
             },
             "passport": {
                 title: "પાસપોર્ટ એપ્લિકેશન માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ (LC) અથવા જન્મનો દાખલો", "છેલ્લી શૈક્ષણિક લાયકાતની માર્કશીટ (Non-ECR માટે)", "બેંક પાસબુક અથવા લાઇટ બિલ (સરનામાના પુરાવા માટે)"]
+                docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ (LC) અથવા જન્મનો દાખલો", "છેલ્લી શૈક્ષણિક લાયકાતની માર્કશીટ (Non-ECR માટે)", "બેંક પાસબુક અથવા લાઇટ બિલ (સરનામાના પુરાવા માટે)"],
+                prices: [{ name: "ટોટલ ચાર્જ (Total Fees)", value: "₹3000" }]
             },
             "pf_esic": {
                 title: "PF & ESIC ના કામ માટે જરૂરી કાગળો",
                 docs: ["UAN નંબર અને પાસવર્ડ", "આધાર કાર્ડ અને પાન કાર્ડ", "બેંક એકાઉન્ટ વિગતો (ચેક અથવા પાસબુક)", "કંપનીમાંથી છૂટા થયા તારીખ (Exit Date - જો ઉપાડવું હોય તો)"],
                 prices: [
-                    { name: "KYC અપડેટ", value: "Custom Charge 150" },
-                    { name: "PF ઉપાડવું (Withdraw)", value: "Custom Charge 250" },
-                    { name: "જૂની કંપનીના પૈસા નવી કંપનીમાં લાવવા", value: "Custom Charge 100" }
+                    { name: "KYC અપડેટ", value: "₹150" },
+                    { name: "PF ઉપાડવું (Withdraw)", value: "₹250" },
+                    { name: "જૂની કંપનીના પૈસા નવી કંપનીમાં લાવવા", value: "₹100" }
                 ],
-                total: "Custom Charge 500"
+                total: "₹500"
             },
             "driving": {
                 title: "ડ્રાઈવિંગ લાયસન્સ માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ (LC) અથવા જન્મનો દાખલો", "બ્લડ ગ્રુપ રિપોર્ટ (લાયસન્સ કેટેગરી મુજબ)", "પાસપોર્ટ સાઇઝ ફોટો"]
+                docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ (LC) અથવા જન્મનો દાખલો", "બ્લડ ગ્રુપ રિપોર્ટ (લાયસન્સ કેટેગરી મુજબ)", "પાસપોર્ટ સાઇઝ ફોટો"],
+                prices: [
+                    { name: "2 વ્હીલર (Two Wheeler)", value: "₹1150" },
+                    { name: "4 વ્હીલર (Four Wheeler)", value: "₹1350" },
+                    { name: "2 & 4 વ્હીલર બન્ને (Both)", value: "₹1800" }
+                ],
+                total: "બાકી વિગતો તમારા કામ પર આધાર રાખે છે"
             },
             "pan": {
                 title: "પાન કાર્ડ બનાવવા માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ (નામ અને જન્મતારીખ સાચી હોવી જરૂરી)", "મોબાઈલ નંબર", "૨ પાસપોર્ટ સાઇઝ ફોટો"]
+                docs: ["આધાર કાર્ડ (નામ અને જન્મતારીખ સાચી હોવી જરૂરી)", "મોબાઈલ નંબર", "૨ પાસપોર્ટ સાઇઝ ફોટો"],
+                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹307" }]
             },
             "light_bill": {
                 title: "લાઇટ બિલમાં નામ ચેન્જ કરવાના કાગળો",
-                docs: ["છેલ્લું લાઇટ બિલ", "નવા માલિકનું આધાર કાર્ડ અને પાન કાર્ડ", "મકાન વેચાણ દસ્તાવેજ અથવા હક્ક પત્રક/વારસાઈ પ્રમાણપત્ર", "પેઢી/સોસાયટીનું NOC સર્ટિફિકેટ"]
+                docs: ["છેલ્લું લાઇટ બિલ", "નવા માલિકનું આધાર કાર્ડ અને પાન કાર્ડ", "મકાન વેચાણ દસ્તાવેજ અથવા હક્ક પત્રક/વારસાઈ પ્રમાણપત્ર", "પેઢી/સોસાયટીનું NOC સર્ટિફિકેટ"],
+                prices: [
+                    { name: "ફાઈલ ચાર્જ (File Charge)", value: "₹1000" },
+                    { name: "સરકારી ચાર્જ (Govt Charge)", value: "કામ પર આધાર રાખે છે" }
+                ]
             },
             "voter": {
                 title: "ચૂંટણી કાર્ડ (Voter ID) માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "રહેઠાણનો પુરાવો (લાઇટ બિલ અથવા رેશન કાર્ડ)", "જન્મનો પુરાવો (LC અથવા માર્કશીટ)", "૧ પાસપોર્ટ સાઇઝ કલર ફોટો"]
+                docs: ["આધાર કાર્ડ", "રહેઠાણનો પુરાવો (લાઇટ બિલ અથવા રેશન કાર્ડ)", "જન્મનો પુરાવો (LC અથવા માર્કશીટ)", "૧ પાસપોર્ટ સાઇઝ કલર ફોટો"],
+                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹150" }]
             },
             "eshram": {
                 title: "ઈ-શ્રમ કાર્ડ બનાવવા માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "બેંક એકાઉન્ટ પાસબુક", "આધાર સાથે લિંક હોય તેવો ચાલુ મોબાઈલ નંબર"]
+                docs: ["આધાર કાર્ડ", "બેંક એકાઉન્ટ પાસબુક", "આધાર સાથે લિંક હોય તેવો ચાલુ મોબાઈલ નંબર"],
+                prices: [{ name: "નવું રજીસ્ટ્રેશન (New Registration)", value: "₹100" }]
             },
             "govt_forms": {
                 title: "સરકારી ફોર્મ ભરવા માટે સામાન્ય કાગળો",
-                docs: ["આધાર કાર્ડ અને رેશન કાર્ડ", "શૈક્ષણિક માર્કશીટ અને સર્ટિફિકેટ્સ (ભરતી ફોર્મ માટે)", "જાતિનો દાખલો અને આવકનો દાખલો"]
+                docs: ["આધાર કાર્ડ અને રેશન કાર્ડ", "શૈક્ષણિક માર્કશીટ અને સર્ટિફિકેટ્સ (ભરતી ફોર્મ માટે)", "જાતિનો દાખલો અને આવકનો દાખલો"],
+                prices: [{ name: "એપ્લિકેશન ફી (Application Fee)", value: "કામ પર આધાર રાખે છે" }]
             },
             "itr": {
                 title: "ITR રિટર્ન ફાઈલિંગ માટે જરૂરી કાગળો",
-                docs: ["પાન કાર્ડ અને આધાર કાર્ડ", "Form 16 (જો નોકરી કરતા હોય)", "બેંક એકાઉન્ટ સ્ટેટમેન્ટ (આખા વર્ષનું)", "બિઝનેસની આવક-જાવક અને લોનની વિગતો"]
+                docs: ["પાન કાર્ડ અને આધાર કાર્ડ", "Form 16 (જો નોકરી કરતા હોય)", "બેંક એકાઉન્ટ સ્ટેટમેન્ટ (આખા વર્ષનું)", "બિઝનેસની આવક-જાવક અને લોનની વિગતો"],
+                prices: [
+                    { name: "ITR ફાઇલિંગ (Normal ITR)", value: "₹750" },
+                    { name: "ITR + TDS રીટર્ન (With TDS Return)", value: "₹2000" }
+                ]
             },
             "ration": {
                 title: "રેશન કાર્ડના કામકાજ માટે જરૂરી કાગળો",
-                docs: ["ઓરિજિનલ رેશન કાર્ડ", "પરિવારના તમામ સભ્યોના આધાર કાર્ડ", "નામ કમી કરવાનું હોય તો કમી કર્યાનું પ્રમાણપત્ર (LPC)", "નવું નામ ઉમેરવા માટે જન્મનો દાખલો અથવા મેરેજ સર્ટિફિકેટ"]
+                docs: ["ઓરિજિનલ રેશન કાર્ડ", "પરિવારના તમામ સભ્યોના આધાર કાર્ડ", "નામ કમી કરવાનું હોય તો કમી કર્યાનું પ્રમાણપત્ર (LPC)", "નવું નામ ઉમેરવા માટે જન્મનો દાખલો અથવા મેરેજ સર્ટિફિકેટ"],
+                prices: [{ name: "સર્વિસ ચાર્જ (Service Charge)", value: "કામ પર આધાર રાખે છે" }]
             }
         };
 
@@ -1090,7 +1115,7 @@
                 listContainer.appendChild(li);
             });
 
-            // જો પ્રાઇસ લિસ્ટ અવેલેબલ હોય (જેમ કે PF માં) તો તેને બતાવો
+            // કિંમતોનું નવું બોક્સ બતાવવા માટે
             const priceBox = document.getElementById('modalPriceBox');
             const priceItemsContainer = document.getElementById('modalPriceItems');
             if (data.prices) {
@@ -1101,10 +1126,12 @@
                     itemLine.innerHTML = `<span>${item.name}</span><span>${item.value}</span>`;
                     priceItemsContainer.appendChild(itemLine);
                 });
-                const totalLine = document.createElement('div');
-                totalLine.className = "price-total-line";
-                totalLine.innerHTML = `<span>Sub Total</span><span>${data.total}</span>`;
-                priceItemsContainer.appendChild(totalLine);
+                if (data.total) {
+                    const totalLine = document.createElement('div');
+                    totalLine.className = "price-total-line";
+                    totalLine.innerHTML = `<span>Total / Note</span><span>${data.total}</span>`;
+                    priceItemsContainer.appendChild(totalLine);
+                }
                 priceBox.style.display = "block";
             } else {
                 priceBox.style.display = "none";
@@ -1161,7 +1188,7 @@
             const files = document.getElementById('clientFiles').files;
             const statusDiv = document.getElementById('uploadStatus');
 
-            statusDiv.innerHTML = "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે... ચેટ ઓપન થતાં જ પેસ્ટ કરીને કાગળો સેન્ડ કરી દો.";
+            statusDiv.innerHTML = "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે... ચેટ ઓપન થતાં j પેસ્ટ કરીને કાગળો સેન્ડ કરી દો.";
             statusDiv.style.color = "#ff9800";
 
             let fileNames = [];
@@ -1187,38 +1214,3 @@ ${fileNames.join('\n')}
                 window.open(finalWpUrl, '_blank');
                 document.getElementById('docUploadForm').reset();
                 statusDiv.innerHTML = "✅ વિગતો મોકલાઈ ગઈ છે! હવે તમારા કાગળો આ ચેટમાં એટેચ કરી દો.";
-                statusDiv.style.color = "#198754";
-            }, 1000);
-        }
-
-        // નવી ૧૦૦% સુધારેલી સુપર ફાસ્ટ લેંગ્વેજ સિસ્ટમ
-        function changeLanguage(langCode) {
-            if (langCode === 'gu') {
-                // જ્યારે યુઝર કસ્ટમ ડ્રોપડાઉનમાંથી ગુજરાતી પસંદ કરે ત્યારે બધી જ ગૂગલ કુકીઝ સંપૂર્ણ સાફ કરો
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.github.io";
-            } else {
-                // અન્ય ભાષાઓ (en/hi) માટે ગૂગલ ટ્રાન્સલેટને કમ્પલ્સરી ફોર્સ કરો
-                document.cookie = "googtrans=/gu/" + langCode + "; path=/;";
-                document.cookie = "googtrans=/gu/" + langCode + "; path=/; domain=" + location.hostname;
-                document.cookie = "googtrans=/gu/" + langCode + "; path=/; domain=.github.io";
-            }
-            
-            // બેકગ્રાઉન્ડના ઓરિજિનલ ગુગલ ડ્રોપડાઉનને પણ ચેન્જ કરો
-            var translateSelect = document.querySelector('select.goog-te-combo');
-            if (translateSelect) {
-                translateSelect.value = langCode;
-                if (typeof(Event) === 'function') {
-                    translateSelect.dispatchEvent(new Event('change', { bubbles: true }));
-                } else {
-                    translateSelect.fireEvent('onchange');
-                }
-            }
-            
-            // પેજ રીલોડ કરીને કન્ફર્મ અપ્લાય કરો
-            location.reload();
-        }
-
-        // પેજ લોડ થતી વખતે કુકીઝના આધારે સાચો ઓપ્શન સિલેક્ટેડ બતાવવો
-        window.addEventListener('load'
