@@ -92,7 +92,7 @@
         [data-theme="dark"] .lang-select-custom {
             color: #fff;
             border-color: #fff;
-            background: var(--bg-card); /* ફિક્સ: ડાર્ક મોડમાં ટેક્સ્ટ દેખાય તે માટે બેકગ્રાઉન્ડ સેટ કર્યું */
+            background: var(--bg-card);
         }
         .lang-selector-container::after {
             content: "\f0d7";
@@ -110,7 +110,7 @@
         }
 
         /* ઓરિજિનલ ગૂગલ ટ્રાન્સલેટ એલિમેન્ટ્સને હાઇડ કરવા માટે */
-        #google_translate_element, .goog-te-banner-frame, .goog-te-balloon-frame {
+        #google_translate_element, .goog-te-banner-frame, .goog-te-balloon-frame, .goog-te-banner {
             display: none !important;
         }
         .skiptranslate:not(.lang-selector-container) {
@@ -397,7 +397,6 @@
         .fixed-call-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-card); border-top: 1px solid var(--border-color); z-index: 9999; display: none; grid-template-columns: 1fr 1fr; transition: background-color 0.3s; }
         .fixed-call-bar a { text-align: center; padding: 15px; text-decoration: none; color: #fff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
-        /* ફિક્સ: વિજેટને મોબાઇલ વ્યુમાં બટન સાથે ભટકાતું રોકવા bottom સહેજ વધાર્યું */
         .whatsapp-bot-widget { position: fixed; bottom: 90px; right: 25px; z-index: 9999; }
         .whatsapp-bot-button { background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.3s; }
         .whatsapp-bot-button:hover { transform: scale(1.1); }
@@ -411,7 +410,6 @@
         .whatsapp-bot-input { flex: 1; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 20px; outline: none; font-size: 0.9rem; background: var(--bg-main); color: var(--text-main); }
         .whatsapp-bot-send { background: #075e54; color: white; border: none; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
-        /* જરૂરી કાગળોના કસ્ટમ પોપ-અપ બોક્સ માટેની સુંદર સ્ટાઈલ */
         .custom-modal {
             display: none;
             position: fixed;
@@ -466,7 +464,6 @@
         }
         [data-theme="dark"] .custom-modal-title { color: #64b5f6; }
         
-        /* કિંમતોના ડિસ્પ્લે માટે નવું સેટઅપ */
         .modal-price-box {
             background: var(--light-color);
             padding: 12px 15px;
@@ -572,8 +569,7 @@
                     <li><a href="#status">સ્ટેટસ જુઓ</a></li>
                     <li><a href="#services">સેવાઓ</a></li>
                     <li><a href="#payment">પેમેન્ટ</a></li>
-                    <li><a href="#contact">સંપર્ક</a></li> <!-- ફિક્સ: મિસિંગ લિંક ઉમેરી -->
-                    <!-- ફિક્સ લેંગ્વેજ ડ્રોપડાઉન સિસ્ટમ -->
+                    <li><a href="#contact">સંપર્ક</a></li>
                     <li>
                         <div class="lang-selector-container">
                             <select id="langSelectDropdown" class="lang-select-custom" onchange="changeLanguage(this.value)">
@@ -583,7 +579,6 @@
                             </select>
                         </div>
                     </li>
-                    <!-- ડાર્ક મોડ ચાલુ બંધ કરવાનું નવું બટન -->
                     <li>
                         <button class="theme-toggle-btn" onclick="toggleTheme()" title="ડાર્ક/લાઇટ મોડ બદલો">
                             <i id="themeIcon" class="fa-solid fa-moon"></i>
@@ -628,7 +623,7 @@
     <section id="about" class="section-padding bg-white">
         <div class="about-content">
             <h2 style="font-size: 2rem; margin-bottom: 20px; font-weight: 800;">અમારા વિશે (About Us)</h2>
-            <p style="margin-bottom: 20px; font-weight: bold; color: #0b4c8c;">વિશ્વાસ, સચોટતા અને ઝડપી ડિજિટલ સેવાઓનું એકમાત્ર સરનામું.</p>
+            <p style="margin-bottom: 20px; font-weight: bold; color: #0b4c8c;">વિશ્વાસ, સચોટતા અને ઝડપી ડિજिटल સેવાઓનું એકમાત્ર સરનામું.</p>
             <p>અમે લાંબા સમયના અનુભવ સાથે ગ્રાહકોને તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, આયુષ્માન કાર્ડ, પાસપોર્ટ, RTO લાયસન્સ, પીએફ (PF) અને ટેક્સ કન્સલ્ટિંગની સેવાઓ પૂરી પાડીએ છીએ. ગ્રાહકોના કિંમતી દસ્તાવેજોની ગુપ્તતા અને સુરક્ષા જાળવવી એ જ અમારો મુખ્ય ધ્યેય છે. અમારું લક્ષ્ય તમને સરકારી કચેરીઓ ધક્કા ખાધા વગર ઘરે બેઠા સો ટકા સાચું કામ કરી આપવાનું છે.</p>
         </div>
     </section>
@@ -655,7 +650,7 @@
 
     <!-- Smart Systems Features -->
     <section id="smart-features" class="section-padding bg-white">
-        <h2 class="section-title">અમારી સ્માર્ટ સિસ્ટમ્સ (Smart Features)</h2> <!-- ફિક્સ: "સ્માાર્ટ" ટાઈપો સુધારી -->
+        <h2 class="section-title">અમારી સ્માર્ટ સિસ્ટમ્સ (Smart Features)</h2>
         <div class="smart-features-container">
             <div class="smart-card">
                 <h3><i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 1.8rem;"></i> વૉટ્સએપ બિઝનેસ સપોર્ટ</h3>
@@ -667,7 +662,7 @@
                 </ul>
             </div>
             <div class="smart-card">
-                <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ડિજિટલ ઓર્ગેનાઇઝેશન</h3>
+                <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ડિજिटल ઓર્ગેનાઇઝેશન</h3>
                 <p>તમારી મહત્વની સંપત્તિઓ, દસ્તાવેજો અને ફાઈલિંગના ડેટાને અમે એકદમ આધુનિક પદ્ધતિથી સુરક્ષિત કરીએ છીએ:</p>
                 <ul>
                     <li><strong>સુરક્ષિત ડેટાબેઝ:</strong> ગ્રાહકોના મહત્વના આઈડી પ્રૂફ અને રેકોર્ડ્સ સંપૂર્ણ ગુપ્ત અને સેફ રહે છે.</li>
@@ -766,7 +761,7 @@
                 <h3>લાઇટ બિલમાં નામ ચેન્જ</h3>
                 <p>તમારી માલિકીના લાઇટ બિલમાં જૂનું નામ બદલીને નવું નામ ઓનલાઈન સચોટ રીતે કરી આપવામાં આવશે.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20લાઇટ%20બિલમાં%20નામ%20ચેન્જ%20કરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજitel%20સર્વિસીસ,%20મને%20લાઇટ%20બિલમાં%20નામ%20ચેન્જ%20કરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('light_bill')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -810,7 +805,7 @@
                 <h3>ITR રીટર્ન ફાઈલિંગ</h3>
                 <p>નોકરિયાત અને વેપારીઓ માટે નિયમ અનુસાર ઇનકમ ટેક્સ રિટર્ન (ITR) ઓનલાઈન ફાઈલ કરવું અને TDS ચેક કરવું.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ITR%20Return%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a> <!-- ફિક્સ: ITR READ ને Return કર્યું -->
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ITR%20Return%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('itr')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -952,7 +947,6 @@
             <ul id="modalDocList" class="custom-doc-list">
                 <!-- ડોક્યુમેન્ટ લિસ્ટ અહીં લોડ થશે -->
             </ul>
-            <!-- કિંમતો બતાવવા માટે નવું ડાયનેમિક આઉટપુટ બોક્સ -->
             <div id="modalPriceBox" class="modal-price-box" style="display:none;">
                 <div class="price-title"><i class="fa-solid fa-tags"></i> સર્વિસ ચાર્જ લિસ્ટ (Fees)</div>
                 <div id="modalPriceItems"></div>
@@ -1004,7 +998,6 @@
             new google.translate.TranslateElement({
                 pageLanguage: 'gu',
                 includedLanguages: 'gu,en,hi',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
         }
@@ -1016,6 +1009,7 @@
                 selectEl.value = lang;
                 selectEl.dispatchEvent(new Event('change'));
             } else {
+                // જો ગૂગલ સ્ક્રિપ્ટ લોડ થવામાં થોડી સેકન્ડ લે તો રીટ્રાય કરશે
                 setTimeout(function() {
                     const retrySelect = document.querySelector('.goog-te-combo');
                     if (retrySelect) {
@@ -1127,9 +1121,9 @@
                 docs: ["પાન કાર્ડ અને આધાર કાર્ડ", "Form 16 (જો નોકરી કરતા હોય)", "બેંક એકાઉન્ટ સ્ટેટમેન્ટ (આખા વર્ષનું)", "બિઝનેસની આવક-જાવક અને લોનની વિગતો"],
                 prices: [
                     { name: "ITR ફાઇલિંગ (Normal ITR)", value: "₹750" },
-                    { name: "ITR + TDS રીટર્ન (With TDS Return)", value: "₹2000"
-                }],
-                total: "બાકી વિગતો ઓડિટ પર આધાર રાખે છે" /* ફિક્સ: ITR માં મિસિંગ ટોટલ પ્રોપર્ટી એડ કરી */
+                    { name: "ITR + TDS રીટર્ન (With TDS Return)", value: "₹2000" }
+                ],
+                total: "બાકી વિગતો ઓડિટ પર આધાર રાખે છે"
             },
             "ration": {
                 title: "રેશન કાર્ડના કામકાજ માટે જરૂરી કાગળો",
