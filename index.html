@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="gu" data-theme="light">
+<html lang="gu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,149 +7,81 @@
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --bg-primary: #f4f7f6;
-            --bg-card: #ffffff;
-            --text-primary: #2d3748;
-            --text-secondary: #718096;
-            --accent-color: #0b4c8c;
-            --accent-hover: #07335f;
-            --border-color: #e2e8f0;
-            --shadow-color: rgba(0, 0, 0, 0.05);
-            --modal-overlay: rgba(0, 0, 0, 0.5);
-        }
-
-        [data-theme="dark"] {
-            --bg-primary: #121212;
-            --bg-card: #1e1e1e;
-            --text-primary: #f7fafc;
-            --text-secondary: #a0aec0;
-            --accent-color: #3182ce;
-            --accent-hover: #63b3ed;
-            --border-color: #2d3748;
-            --shadow-color: rgba(0, 0, 0, 0.3);
-            --modal-overlay: rgba(0, 0, 0, 0.8);
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Hind Vadodara', sans-serif;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
+            background-color: #f4f7f6;
+            color: #333;
             line-height: 1.6;
-            padding-bottom: 60px;
-        }
-
-        header {
-            background-color: var(--bg-card);
-            border-bottom: 1px solid var(--border-color);
-            padding: 15px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px var(--shadow-color);
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .btn-theme {
-            background: none;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 8px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
+            padding: 20px;
         }
 
         .container {
             max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
+            margin: 0 auto;
         }
 
-        /* હીરો સેક્શન */
-        .hero {
-            background: linear-gradient(135deg, #0b4c8c, #007aff);
+        header {
+            background-color: #0b4c8c;
             color: white;
-            padding: 50px 30px;
-            border-radius: 15px;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 20px var(--shadow-color);
+            border-radius: 8px;
+            margin-bottom: 30px;
         }
 
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* ટ્રેકર અને ફોર્મ સેક્શન */
-        .interactive-grid {
+        .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
             margin-bottom: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .interactive-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         .card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 4px 6px var(--shadow-color);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
         }
 
-        .card h2 {
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-            color: var(--accent-color);
+        .card h3 {
+            color: #0b4c8c;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .btn {
+            background-color: #0b4c8c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #07335f;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebd56;
         }
 
         .form-group {
@@ -159,817 +91,230 @@
         .form-group label {
             display: block;
             margin-bottom: 5px;
-            font-weight: 600;
+            font-weight: bold;
         }
 
         .form-control {
             width: 100%;
             padding: 10px;
-            border: 1px solid var(--border-color);
+            border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
         }
 
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            width: 100%;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-        }
-
-        /* સર્વિસ ગ્રીડ */
-        .services-title {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-
-        .service-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            box-shadow: 0 4px 6px var(--shadow-color);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px var(--shadow-color);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* મોડલ બોક્સ (Pop-up) */
+        /* Pop-up Modal */
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--modal-overlay);
-            z-index: 1000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            z-index: 1000;
         }
 
         .modal-content {
-            background-color: var(--bg-card);
-            border-radius: 12px;
-            max-width: 500px;
-            width: 100%;
+            background: white;
             padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .close-btn {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.5rem;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
             cursor: pointer;
-            color: var(--text-secondary);
         }
 
-        .close-btn:hover {
-            color: var(--text-primary);
-        }
-
-        .modal h2 {
-            margin-bottom: 15px;
-            color: var(--accent-color);
-            font-size: 1.4rem;
-        }
-
-        .modal ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        .modal li {
-            margin-bottom: 8px;
-        }
-
-        .price-box {
-            background-color: var(--bg-primary);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 5px solid var(--accent-color);
-        }
-
-        .price-item-line {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        /* ફૂટર */
         footer {
-            background-color: var(--bg-card);
-            border-top: 1px solid var(--border-color);
-            padding: 30px 20px;
             text-align: center;
-        }
-
-        .footer-links {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .footer-links a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* સ્માર્ટ વૉટ્સએપ ચેટ બોટ */
-        .whatsapp-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .whatsapp-btn {
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .bot-box {
-            display: none;
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            width: 320px;
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-
-        .bot-header {
-            background-color: #075e54;
-            color: white;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .bot-body {
-            height: 250px;
-            padding: 15px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background-color: #efeae2;
-        }
-
-        [data-theme="dark"] .bot-body {
-            background-color: #121b22;
-        }
-
-        .whatsapp-bot-msg {
-            max-width: 80%;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-        }
-
-        .bot-input-area {
-            display: flex;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .bot-input-area input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            outline: none;
-            background-color: var(--bg-card);
-            color: var(--text-primary);
-        }
-
-        .bot-input-area button {
-            background-color: #075e54;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-        }
-
-        /* ગૂગલ ટ્રાન્સલેટ હાઇડ કરવા માટેની વધારાની સ્ટાઇલ */
-        .goog-te-banner-frame.skiptranslate {
-            display: none !important;
-        }
-        body {
-            top: 0px !important;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <!-- હેડર સેક્શન -->
-    <header>
-        <div class="header-container">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-laptop-code"></i> અશોક ડિજિટલ
-            </a>
-            <div class="header-actions">
-                <!-- ગૂગલ ટ્રાન્સલેટ ડ્રોપડાઉન કન્ટેનર -->
-                <div id="google_translate_element"></div>
-                
-                <!-- થીમ સ્વિચર -->
-                <button class="btn-theme" onclick="toggleTheme()">
-                    <i id="themeIcon" class="fa-solid fa-moon"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
     <div class="container">
         
-        <!-- હીરો બેનર -->
-        <section class="hero">
-            <h1>અશોક ડિજિટલ સર્વિસીસમાં આપનું સ્વાગત છે</h1>
-            <p>ઝડપી, પારદર્શક અને વિશ્વસનીય સરકારી તેમજ ઓનલાઈન ફોર્મની સેવાઓ મેળવો ઘરે બેઠા.</p>
-        </section>
+        <header>
+            <h1>અશોક ડિજિટલ સર્વિસીસ</h1>
+            <p>સરકારી અને ઓનલાઈન ફોર્મની સેવાઓ હવે એકદમ સરળ</p>
+        </header>
 
-        <!-- ઇન્ટરેક્ટિવ ગ્રીડ (સ્ટેટસ અને વૉટ્સએપ અપલોડ) -->
-        <section class="interactive-grid">
+        <!-- ફોર્મ અને ટ્રેકર -->
+        <div class="grid">
             
             <!-- ટ્રેકર કાર્ડ -->
             <div class="card">
-                <h2><i class="fa-solid fa-magnifying-glass"></i> એપ્લિકેશન સ્ટેટસ ટ્રેકર</h2>
-                <p style="margin-bottom: 15px; color: var(--text-secondary);">તમારો મોબાઈલ નંબર અથવા એપ્લિકેશન આઈડી નાખીને સ્ટેટસ ચેક કરો:</p>
+                <h3><i class="fa-solid fa-magnifying-glass"></i> એપ્લિકેશન સ્ટેટસ ટ્રેકર</h3>
                 <div class="form-group">
-                    <input type="text" id="userInput" class="form-control" placeholder="મોબાઈલ નંબર / ફાઇલ આઈડી દાખલ કરો">
+                    <input type="text" id="userInput" class="form-control" placeholder="મોબાઈલ નંબર દાખલ કરો">
                 </div>
-                <button class="btn-primary" onclick="checkStatus()">સ્ટેટસ તપાસો</button>
-                <div id="statusResult" style="margin-top: 15px; font-weight: 600;"></div>
+                <button class="btn" onclick="checkStatus()">સ્ટેટસ તપાસો</button>
+                <div id="statusResult" style="margin-top: 15px; font-weight: bold;"></div>
             </div>
 
-            <!-- ડોક્યુમેન્ટ અપલોડ -->
+            <!-- ડોક્યુમેન્ટ મોકલવા માટે -->
             <div class="card">
-                <h2><i class="fa-solid fa-cloud-arrow-up"></i> વૉટ્સએપ ડોક્યુમેન્ટ સેન્ડર</h2>
-                <form onsubmit="handleUpload(event)">
+                <h3><i class="fa-solid fa-cloud-arrow-up"></i> વૉટ્સએપ પર ફાઈલ મોકલો</h3>
+                <form onsubmit="sendToWhatsApp(event)">
                     <div class="form-group">
-                        <label for="clientName">તમારું નામ:</label>
-                        <input type="text" id="clientName" class="form-control" required placeholder="પૂરું નામ લખો">
+                        <input type="text" id="clientName" class="form-control" placeholder="તમારું નામ" required>
                     </div>
                     <div class="form-group">
-                        <label for="clientPhone">મોબાઈલ નંબર:</label>
-                        <input type="tel" id="clientPhone" class="form-control" required placeholder="વૉટ્સએપ નંબર">
+                        <input type="tel" id="clientPhone" class="form-control" placeholder="વૉટ્સએપ નંબર" required>
                     </div>
                     <div class="form-group">
-                        <label for="serviceType">સેવા પસંદ કરો:</label>
                         <select id="serviceType" class="form-control" required>
-                            <option value="">-- પસંદ કરો --</option>
+                            <option value="">-- સેવા પસંદ કરો --</option>
                             <option value="આયુષ્માન કાર્ડ">આયુષ્માન કાર્ડ</option>
                             <option value="પાન કાર્ડ">પાન કાર્ડ</option>
                             <option value="ડ્રાઈવિંગ લાયસન્સ">ડ્રાઈવિંગ લાયસન્સ</option>
                             <option value="ITR રિટર્ન">ITR રિટર્ન</option>
-                            <option value="બીજી કોઈ સેવા">અન્ય કોઈ સેવા</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="clientFiles">ફોટા/પીડીએફ સિલેક્ટ કરો (ઓપ્શનલ):</label>
-                        <input type="file" id="clientFiles" class="form-control" multiple>
-                    </div>
-                    <button type="submit" class="btn-primary" style="background-color: #25d366;">
-                        <i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ પર ફાઈલો મોકલો
+                    <button type="submit" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ પર સબમિટ કરો
                     </button>
-                    <div id="uploadStatus" style="margin-top: 10px; font-weight: 600;"></div>
                 </form>
             </div>
 
-        </section>
+        </div>
 
-        <!-- ૧૩ સેવાઓનો સેક્શન -->
-        <h2 class="services-title">અમારી ઓનલાઈન સેવાઓ (માહિતી મેળવવા ક્લિક કરો)</h2>
-        <section class="services-grid">
+        <!-- સેવાઓનું સેક્શન -->
+        <h2 style="margin-bottom: 20px; text-align: center; color: #0b4c8c;">અમારી સેવાઓ</h2>
+        <div class="grid">
             
-            <div class="service-card" onclick="showDocs('ayushman')">
-                <div class="service-icon"><i class="fa-solid fa-id-card-clip"></i></div>
-                <h3>આયુષ્માન કાર્ડ</h3>
-                <p>₹૫ લાખ સુધીની ફ્રી સારવાર માટેનું હેલ્થ કાર્ડ મેળવો.</p>
+            <div class="card" style="cursor: pointer;" onclick="showDocs('ayushman')">
+                <h3><i class="fa-solid fa-id-card-clip"></i> આયુષ્માન કાર્ડ</h3>
+                <p>₹5 લાખ સુધીની મફત સારવાર માટેનું કાર્ડ.</p>
             </div>
 
-            <div class="service-card" onclick="showDocs('msme')">
-                <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
-                <h3>MSME ઉદ્યોગ આધાર</h3>
-                <p>તમારા વેપાર અને ધંધાનું સરકારી ઓનલાઈન રજીસ્ટ્રેશન.</p>
+            <div class="card" style="cursor: pointer;" onclick="showDocs('pan')">
+                <h3><i class="fa-solid fa-address-card"></i> પાન કાર્ડ</h3>
+                <p>નવું પાન કાર્ડ અથવા સુધારા-વધારા કરવા માટે.</p>
             </div>
 
-            <div class="service-card" onclick="showDocs('shopact')">
-                <div class="service-icon"><i class="fa-solid fa-shop"></i></div>
-                <h3>ગુમાસ્તા ધારો / શોપ એક્ટ</h3>
-                <p>નવી દુકાન અથવા વ્યવસાય માટેનું લાયસન્સ.</p>
+            <div class="card" style="cursor: pointer;" onclick="showDocs('driving')">
+                <h3><i class="fa-solid fa-car"></i> ડ્રાઈવિંગ લાયસન્સ</h3>
+                <p>લર્નિંગ અને પાકા લાયસન્સના ફોર્મ.</p>
             </div>
 
-            <div class="service-card" onclick="showDocs('passport')">
-                <div class="service-icon"><i class="fa-solid fa-passport"></i></div>
-                <h3>નવો પાસપોર્ટ</h3>
-                <p>ઓનલાઈન ફોર્મ સબમિશન અને અપોઇન્ટમેન્ટ સેટિંગ.</p>
+            <div class="card" style="cursor: pointer;" onclick="showDocs('itr')">
+                <h3><i class="fa-solid fa-calculator"></i> ITR રિટર્ન</h3>
+                <p>ઇન્કમ ટેક્સ રિટર્ન ફાઇલિંગ કરવા માટે.</p>
             </div>
 
-            <div class="service-card" onclick="showDocs('pf_esic')">
-                <div class="service-icon"><i class="fa-solid fa-piggy-bank"></i></div>
-                <h3>PF & ESIC</h3>
-                <p>પીએફ ઉપાડ, દાવાઓ અને પીએફ ટ્રાન્સફરનું કામ.</p>
-            </div>
+        </div>
 
-            <div class="service-card" onclick="showDocs('driving')">
-                <div class="service-icon"><i class="fa-solid fa-car"></i></div>
-                <h3>ડ્રાઈવિંગ લાયસન્સ</h3>
-                <p>લર્નિંગ અને પાકા લાયસન્સના ઓનલાઈન ફોર્મ તથા એપોઇન્ટમેન્ટ.</p>
-            </div>
-
-            <div class="service-card" onclick="showDocs('pan')">
-                <div class="service-icon"><i class="fa-solid fa-address-card"></i></div>
-                <h3>પાન કાર્ડ</h3>
-                <p>નવું પાન કાર્ડ મેળવવું અથવા જૂના કાર્ડમાં સુધારો કરવો.</p>
-            </div>
-
-            <div class="service-card" onclick="showDocs('light_bill')">
-                <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>લાઈટ બિલ નામ ચેન્જ</h3>
-                <p>નવા મકાન/દુકાનની ખરીદી બાદ લાઈટ બિલમાં નામ ફેરબદલ.</p>
-            </div>
-
-            <div class="service-card" onclick="showDocs('voter')">
-                <div class="service-icon"><i class="fa-solid fa-check-to-slot"></i></div>
-                <h3>વોટર આઈડી (ચૂંટણી કાર્ડ)</h3>
-                <p>નવું ચૂંટણી કાર્ડ અથવા નામ-સરનામામાં ફેરફાર.</p>
-            </div>
-
-            <div class="service-card" onclick="showDocs('eshram')">
-                <div class="service-icon"><i class="fa-solid fa-helmet-safety"></i></div>
-                <h3>ઈ-શ્રમ કાર્ડ</h3>
-                <p>અસંગઠિત ક્ષેત્રના કામદારો માટે સરકારી કાર્ડ.</p>
-            </div>
-
-            <div class="service-card" onclick="showDocs('govt_forms')">
-                <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
-                <h3>ઓનલાઈન સરકારી યોજના</h3>
-                <p>સરકારની વિવિધ સબસિડી અને સહાય યોજનાના ઓનલાઈન ફોર્મ.</p>
-            </div>
-
-            <div class="service-card" onclick="showDocs('itr')">
-                <div class="service-icon"><i class="fa-solid fa-calculator"></i></div>
-                <h3>ITR રિટર્ન ફાઇલ</h3>
-                <p>પર્સનલ અથવા બિઝનેસ ઇન્કમ ટેક્સ રિટર્ન ચોકસાઈપૂર્વક ફાઇલિંગ.</p>
-            </div>
-
-            <div class="service-card" onclick="showDocs('ration')">
-                <div class="service-icon"><i class="fa-solid fa-wheat-awn"></i></div>
-                <h3>રેશન કાર્ડ વિગતો</h3>
-                <p>નવું કાર્ડ, નામ ઉમેરવું અથવા કમી કરવા માટે જરૂરી મદદ.</p>
-            </div>
-
-        </section>
     </div>
 
-    <!-- સામાન્ય ડોક્યુમેન્ટ મોડલ (Pop-up) -->
+    <!-- માહિતી પોપ-અપ -->
     <div id="docModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeDocs()">&times;</span>
-            <h2 id="modalTitle">જરૂરી ડોક્યુમેન્ટ્સ</h2>
-            <p style="margin-bottom: 10px; font-weight: bold; color: var(--text-secondary);">નીચે મુજબના કાગળો તૈયાર રાખવા:</p>
-            <ul id="modalDocList"></ul>
-            
-            <div id="modalPriceBox" class="price-box">
-                <p style="margin-bottom: 8px; font-weight: bold; color: var(--accent-color);"><i class="fa-solid fa-tags"></i> અંદાજિત કિંમત / સર્વિસ ચાર્જ:</p>
-                <div id="modalPriceItems"></div>
-            </div>
+            <h2 id="modalTitle" style="color: #0b4c8c; margin-bottom: 15px;"></h2>
+            <p style="font-weight: bold; margin-bottom: 10px;">જરૂરી દસ્તાવેજો:</p>
+            <ul id="modalDocList" style="margin-left: 20px; margin-bottom: 20px;"></ul>
+            <p id="modalPrice" style="font-weight: bold; background: #eee; padding: 10px; border-radius: 5px;"></p>
         </div>
     </div>
 
-    <!-- લીગલ પોલિસીસ મોડલ (Pop-up) -->
-    <div id="legalModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeLegal()">&times;</span>
-            <h2 id="legalModalTitle">પોલિસી</h2>
-            <div id="legalModalBody" style="margin-top: 15px; font-size: 0.95rem;"></div>
-        </div>
-    </div>
-
-    <!-- ફૂટર -->
     <footer>
         <p>&copy; 2026 અશોક ડિજિટલ સર્વિસીસ. સર્વાધિકાર સુરક્ષિત.</p>
-        <p>ડેવલપમેન્ટ બાય અશોક આઇટી ટીમ.</p>
-        <div class="footer-links">
-            <a onclick="showLegal('terms')">નિયમો અને શરતો</a>
-            <span>|</span>
-            <a onclick="showLegal('refund')">રીફંડ પોલિસી</a>
-            <span>|</span>
-            <a onclick="showLegal('privacy')">પ્રાઇવસી પોલિસી</a>
-        </div>
     </footer>
 
-    <!-- સ્માર્ટ વૉટ્સએપ ચેટ બોટ વિજેટ -->
-    <div class="whatsapp-widget">
-        <div class="whatsapp-btn" onclick="toggleBotBox()">
-            <i class="fa-brands fa-whatsapp"></i>
-        </div>
-        <div id="botBox" class="bot-box">
-            <div class="bot-header">
-                <span style="font-weight: 600;"><i class="fa-brands fa-whatsapp"></i> અશોક બોટ આસિસ્ટન્ટ</span>
-                <span style="cursor: pointer;" onclick="toggleBotBox()">&times;</span>
-            </div>
-            <div id="botBody" class="bot-body">
-                <div class="whatsapp-bot-msg" style="background-color: white; float: left; clear: both; margin-bottom: 10px;">
-                    નમસ્તે! હું અશોક ડિજિટલ આસિસ્ટન્ટ છું. તમને કઈ ઓનલાઈન સેવાની માહિતી જોઈએ છે? તમે અહીં પૂછી શકો છો!
-                </div>
-            </div>
-            <div class="bot-input-area">
-                <input type="text" id="botInput" placeholder="અહીં તમારો પ્રશ્ન લખો..." onkeypress="handleBotKey(event)">
-                <button onclick="sendBotMessage()"><i class="fa-solid fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ગૂગલ ટ્રાન્સલેટ સ્ક્રિપ્ટ લોડર -->
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <!-- મુખ્ય એપ્લિકેશન જાવાસ્ક્રિપ્ટ લોજિક -->
     <script>
-        // ગૂગલ ટ્રાન્સલેટ ઇનિશિયલાઇઝેશન
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'gu',
-                includedLanguages: 'gu,en,hi',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-
-        // થીમ ચેન્જર
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', targetTheme);
-            localStorage.setItem('theme', targetTheme);
-            
-            const icon = document.getElementById('themeIcon');
-            if (targetTheme === 'dark') {
-                icon.className = 'fa-solid fa-sun';
-            } else {
-                icon.className = 'fa-solid fa-moon';
-            }
-        }
-
-        // સેવ કરેલી થીમ લોડ કરવી
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        window.addEventListener('DOMContentLoaded', () => {
-            const icon = document.getElementById('themeIcon');
-            if (savedTheme === 'dark' && icon) {
-                icon.className = 'fa-solid fa-sun';
-            }
-        });
-
-        // ==========================================
-        // જરૂરી ડોક્યુમેન્ટ્સ અને ફી નો ડેટાબેઝ (૧૩ સેવાઓ)
-        // ==========================================
+        // ડેટાબેઝ
         const docDatabase = {
             "ayushman": {
-                title: "આયુષ્માન ભારત કાર્ડ માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ (બધા સભ્યોના)", "રેશન કાર્ડ (નવું અપડેટ કરેલું)", "મોબાઈલ નંબર (આધાર સાથે લિંક હોય તે)"],
-                prices: [{ name: "નવું / અપડેટ ચાર્જ (New / Update Fee)", value: "₹150" }]
-            },
-            "msme": {
-                title: "MSME રજીસ્ટ્રેશન માટે જરૂરી કાગળો",
-                docs: ["માલિકનું આધાર કાર્ડ", "માલિકનું પાન કાર્ડ", "બિઝનેસ/દુકાનનું નામ અને સરનામું", "બેંક એકાઉન્ટ પાસબુક અથવા કેન્સલ ચેક"],
-                prices: [{ name: "સરકારી રજીસ્ટ્રેશન ફી", value: "ફ્રી (Free)" }, { name: "કન્સલ્ટન્સી ચાર્જ", value: "₹300" }]
-            },
-            "shopact": {
-                title: "ગુમાસ્તા ધારો / શોપ એક્ટ માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ અને પાન કાર્ડ", "દુકાન/ઓફિસનો લાઇટ બિલ", "દુકાન માલિકીની ન હોય તો ભાડાકરાર (Rent Agreement)", "દુકાનના બોર્ડ સાથેનો માલિકનો ફોટો"],
-                prices: [{ name: "નવું લાયસન્સ ચાર્જ", value: "₹500 થી શરૂ (કેટેગરી મુજબ)" }]
-            },
-            "passport": {
-                title: "પાસપોર્ટ એપ્લિકેશન માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "પાન કાર્ડ અથવા ચૂંટણી કાર્ડ", "શાળા છોડ્યાનું પ્રમાણપત્ર (LC) અથવા ૧૦ પાસ માર્કશીટ", "બેંક પાસબુક (અપડેટ કરેલી ફોટા સાથે)"],
-                prices: [{ name: "સરકારી પાસપોર્ટ ફી", value: "₹1500" }, { name: "ઓનલાઈન એપ્લિકેશન સર્વિસ ચાર્જ", value: "₹300" }]
-            },
-            "pf_esic": {
-                title: "PF & ESIC કન્સલ્ટન્સી માટે જરૂરી કાગળો",
-                docs: ["UAN નંબર અને પાસવર્ડ", "આધાર કાર્ડ (મોબાઈલ લિંક સાથે)", "પાન કાર્ડ", "બેંક પાસબુક અથવા કેન્સલ ચેક (સ્પષ્ટ નામ દર્શાવતો)"],
-                prices: [{ name: "PF એડવાન્સ/ઉપાડ સર્વિસ ચાર્જ", value: "કામના પ્રકાર પર આધારિત" }]
-            },
-            "driving": {
-                title: "ડ્રાઈવિંગ લાયસન્સ માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ (જન્મતારીખ સુધારા સાથેનું)", "શાળા છોડ્યાનું પ્રમાણપત્ર (LC) અથવા લિવિંગ સર્ટિફિકેટ", "પાસપોર્ટ સાઇઝ ફોટો અને સહી", "બ્લડ ગ્રુપ રિપોર્ટ (પાકા લાયસન્સ માટે)"],
-                prices: [{ name: "લર્નિંગ લાયસન્સ ઓનલાઈન ફી + ચાર્જ", value: "₹450" }, { name: "પાકું લાયસન્સ ફી + ચાર્જ", value: "₹800" }]
+                title: "આયુષ્માન કાર્ડ",
+                docs: ["આધાર કાર્ડ (મોબાઈલ લિંક સાથે)", "રેશન કાર્ડ", "મોબાઈલ નંબર"],
+                price: "સર્વિસ ચાર્જ: ₹150"
             },
             "pan": {
-                title: "પાન કાર્ડ (PAN Card) માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ (સંપૂર્ણ વિગતો સાચી હોવી જરૂરી)", "૨ પાસપોર્ટ સાઇઝ ફોટા (જો આધાર કાર્ડ દ્વારા ન કરવું હોય તો)", "મોબાઈલ નંબર"],
-                prices: [{ name: "નવું પાન કાર્ડ મેળવવું", value: "₹150" }, { name: "ભૂલ સુધારણા / કરેક્શન", value: "₹180" }]
+                title: "પાન કાર્ડ",
+                docs: ["આધાર કાર્ડ", "૨ પાસપોર્ટ સાઇઝ ફોટા", "મોબાઈલ નંબર"],
+                price: "સર્વિસ ચાર્જ: ₹150"
             },
-            "light_bill": {
-                title: "લાઇટ બિલમાં નામ ચેન્જ માટે જરૂરી કાગળો",
-                docs: ["નવું ઇન્ડેક્સ કોપી (દસ્તાવેજ ઇન્ડેક્સ-૨)", "પ્રોપર્ટી ટેક્સ બિલ (веરા બિલ)", "જેનું નામ કરવાનું છે તેમનું આધાર કાર્ડ", "છેલ્લું ભરેલું લાઇટ બિલ"],
-                prices: [{ name: "ફાઈલિંગ અને પ્રોસેસિંગ ચાર્જ", value: "₹500 થી શરૂ" }]
-            },
-            "voter": {
-                title: "વોટર આઈડી (ચૂંટણી કાર્ડ) માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "જન્મનો પુરાવો (LC અથવા જન્મ પ્રમાણપત્ર)", "એડ્રેસ પ્રૂફ (લાઇટ બિલ/વેરા બિલ)", "૧ પાસપોર્ટ સાઇઝ ફોટો"],
-                prices: [{ name: "નવું/સુધારા માટે સર્વિસ ચાર્જ", value: "₹100" }]
-            },
-            "eshram": {
-                title: "ઈ-શ્રમ કાર્ડ માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "મોબાઈલ નંબર (આધાર લિંક)", "બેંક એકાઉન્ટ વિગતો (IFSC કોડ સાથે)"],
-                prices: [{ name: "નવું ઈ-શ્રમ કાર્ડ મેળવવું", value: "₹80" }]
-            },
-            "govt_forms": {
-                title: "ઓનલાઈન સરકારી ફોર્મ માટે જરૂરી કાગળો",
-                docs: ["યોજના અથવા ભરતીની જાહેરાત મુજબના શૈક્ષણિક કાગળો", "આધાર કાર્ડ અને પાન કાર્ડ", "જાતિ અને આવકનો દાખલો (લાગુ પડતો હોય ત્યાં)"],
-                prices: [{ name: "ફોર્મ ભરવાનો સામાન્ય ચાર્જ", value: "₹100 થી ₹200 (ફોર્મ મુજબ)" }]
+            "driving": {
+                title: "ડ્રાઈવિંગ લાયસન્સ",
+                docs: ["આધાર કાર્ડ", "શાળા છોડ્યાનું પ્રમાણપત્ર (LC)", "પાસપોર્ટ સાઇઝ ફોટો"],
+                price: "સર્વિસ ચાર્જ: ₹450 થી શરૂ"
             },
             "itr": {
-                title: "ITR રિટર્ન ફાઈલિંગ માટે જરૂરી કાગળો",
-                docs: ["પાન કાર્ડ અને આધાર કાર્ડ", "Form 16 (નોકરીયાત માટે)", "બેંક સ્ટેટમેન્ટ કે પાસબુક (૧ વર્ષની)", "લોન અથવા અન્ય રોકાણના પુરાવા (જો હોય તો)"],
-                prices: [{ name: "સેલેરી ક્લાસ ITR ફાઈલિંગ", value: "₹500" }, { name: "બિઝનેસ ક્લાસ ITR ફાઈલિંગ", value: "₹1000 થી શરૂ" }]
-            },
-            "ration": {
-                title: "રેશન કાર્ડના કામકાજ માટે જરૂરી કાગળો",
-                docs: ["હાલનું રેશન કાર્ડ", "પરિવારના તમામ સભ્યોના આધાર કાર્ડ", "નામ કમી કરવાનું પ્રમાણપત્ર (જો નવું નામ ઉમેરવું હોય તો)", "લગ્ન કંકોત્રી/મેરેજ સર્ટિફિકેટ (નવી વહુનું નામ ઉમેરવા)"],
-                prices: [{ name: "નામ ઉમેરવું/કમી કરવું/નવું કાર્ડ", value: "₹150 થી શરૂ" }]
+                title: "ITR રિટર્ન",
+                docs: ["પાન કાર્ડ", "આધાર કાર્ડ", "બેંક પાસબુક / સ્ટેટમેન્ટ"],
+                price: "સર્વિસ ચાર્જ: ₹500 થી શરૂ"
             }
         };
 
-        // મોડલ બોક્સ ઓપન કરવાનું ફંક્શન
-        function showDocs(serviceKey) {
-            const data = docDatabase[serviceKey];
+        // મોડલ બતાવવા માટે
+        function showDocs(key) {
+            const data = docDatabase[key];
             if (!data) return;
 
-            // ટાઇટલ સેટ કરો
             document.getElementById('modalTitle').innerText = data.title;
-
-            // ડોક્યુમેન્ટ લિસ્ટ અપડેટ કરો
-            const docList = document.getElementById('modalDocList');
-            docList.innerHTML = '';
-            data.docs.forEach(doc => {
+            
+            const list = document.getElementById('modalDocList');
+            list.innerHTML = '';
+            data.docs.forEach(item => {
                 const li = document.createElement('li');
-                li.innerText = doc;
-                docList.appendChild(li);
+                li.innerText = item;
+                list.appendChild(li);
             });
 
-            // ફી ની વિગતો અપડેટ કરો
-            const priceBox = document.getElementById('modalPriceBox');
-            const priceItems = document.getElementById('modalPriceItems');
-            priceItems.innerHTML = '';
-
-            if (data.prices && data.prices.length > 0) {
-                priceBox.style.display = 'block';
-                data.prices.forEach(price => {
-                    const itemLine = document.createElement('div');
-                    itemLine.className = 'price-item-line';
-                    itemLine.innerHTML = `<span>${price.name}</span><span>${price.value}</span>`;
-                    priceItems.appendChild(itemLine);
-                });
-            } else {
-                priceBox.style.display = 'none';
-            }
-
-            // મોડલ દર્શાવો
+            document.getElementById('modalPrice').innerText = data.price;
             document.getElementById('docModal').style.display = 'flex';
         }
 
-        // મોડલ બોક્સ બંધ કરવાનું ફંક્શન
         function closeDocs() {
             document.getElementById('docModal').style.display = 'none';
         }
 
-        // બહાર ક્લિક કરવાથી મોડલ બંધ થાય
-        window.onclick = function(event) {
-            const docModal = document.getElementById('docModal');
-            const legalModal = document.getElementById('legalModal');
-            if (event.target === docModal) {
-                docModal.style.display = 'none';
-            }
-            if (event.target === legalModal) {
-                legalModal.style.display = 'none';
-            }
-        }
-
-        // ==========================================
-        // લીગલ પોલિસીસ (પોપ-અપ વિગતો)
-        // ==========================================
-        const legalData = {
-            refund: {
-                title: "Refund & Cancellation Policy",
-                body: `<h4>રીફંડ પોલિસીની શરતો:</h4><br>
-                       <p>૧. જો અમારા તરફથી ફોર્મ સબમિટ કરવામાં કોઈ ભૂલ થશે, તો અમે સંપૂર્ણ ફી અથવા કામ ફરીથી કરી આપીશું.</p><br>
-                       <p>૨. સરકારી પોર્ટલની ટેકનીકલ ખામી કે સર્વર ડાઉન હોવાને કારણે થતા વિલંબ માટે કોઈ રિફંડ મળવાપાત્ર નથી.</p><br>
-                       <p>૩. એકવાર ઓનલાઈન ચલણ કપાઈ ગયા પછી કોઈ પણ સંજોગોમાં તે ટ્રાન્ઝેક્શન કેન્સલ કે રીફંડ કરી શકાશે નહીં.</p>`
-            },
-            terms: {
-                title: "Terms & Conditions",
-                body: `<h4>નિયમો અને શરતો:</h4><br>
-                       <p>૧. ગ્રાહકે પૂરા પાડેલા તમામ દસ્તાવેજો અને માહિતી સાચી હોવી અનિવાર્ય છે. ખોટા દસ્તાવેજો માટે ગ્રાહક પોતે જવાબદાર રહેશે.</p><br>
-                       <p>૨. ઓનલાઈન પેમેન્ટ કન્ફર્મ થયા પછી જ ફાઈલ પ્રોસેસિંગની કામગીરી શરૂ કરવામાં આવશે.</p><br>
-                       <p>૩. RTO અથવા પાસપોર્ટની એપોઇન્ટમેન્ટ માટે જે તે સરકારી તારીખ અને નિયમો લાગુ પડશે.</p>`
-            },
-            privacy: {
-                title: "Privacy Policy",
-                body: `<h4>પ્રાઇવસી પોલિસી (ડેટા સુરક્ષા):</h4><br>
-                       <p>૧. તમારા સરકારી કાર્ડ્સ અને અંગત ફોટા કે દસ્તાવેજો માત્ર જે તે ફોર્મ ભરવાના ઉપયોગ પૂરતા જ મર્યાદિત રહેશે.</p><br>
-                       <p>૨. તમારો ડેટા કોઈ ત્રીજી પાર્ટી કે જાહેરાત કંપની સાથે ક્યારેય શેર કરવામાં આવતો નથી.</p><br>
-                       <p>૩. ગ્રાહકના સંતોષ અને વિનંતી પર ફાઇલિંગ પૂરું થતાં જ તેમનો ડેટા અમારા ડેટાબેઝમાંથી કાયમી ધોરણે રદ કરી શકાય છે.</p>`
-            }
-        };
-
-        function showLegal(type) {
-            const data = legalData[type];
-            if (!data) return;
-            document.getElementById('legalModalTitle').innerText = data.title;
-            document.getElementById('legalModalBody').innerHTML = data.body;
-            document.getElementById('legalModal').style.display = 'flex';
-        }
-
-        function closeLegal() {
-            document.getElementById('legalModal').style.display = 'none';
-        }
-
-        // ==========================================
-        // એપ્લિકેશન સ્ટેટસ ટ્રેકર સિસ્ટમ
-        // ==========================================
+        // સ્ટેટસ ચેક કરવા માટે
         function checkStatus() {
             const input = document.getElementById('userInput').value.trim();
-            const resultDiv = document.getElementById('statusResult');
-            
+            const result = document.getElementById('statusResult');
+
             if (!input) {
-                resultDiv.innerHTML = "<span style='color:#d9534f;'>કૃપા કરીને મોબાઈલ નંબર અથવા આઈડી દાખલ કરો!</span>";
+                result.innerHTML = "<span style='color: red;'>મોબાઈલ નંબર લખો!</span>";
                 return;
             }
 
-            resultDiv.innerHTML = "<span style='color:#0b4c8c;'><i class='fa-solid fa-spinner fa-spin'></i> વેરિફિકેશન ચાલુ છે...</span>";
-            
+            result.innerHTML = "ચકાસણી ચાલુ છે...";
             setTimeout(() => {
-                if(input === "9484418910" || input === "9484419063") {
-                    resultDiv.innerHTML = "<span style='color:#198754;'><i class='fa-solid fa-circle-check'></i> તમારી ફાઈલ સબમિટ થઈ ગઈ છે અને ચકાસણી હેઠળ છે. અમે ટૂંક સમયમાં વૉટ્સએપ પર સંપર્ક કરીશું!</span>";
-                } else {
-                    resultDiv.innerHTML = "<span style='color:#ff9800;'><i class='fa-solid fa-circle-exclamation'></i> આ નંબર/ID પર હાલ કોઈ પ્રોગ્રેસ નથી. વૉટ્સએપ પર ફાસ્ટ અપડેટ માટે સંપર્ક કરો.</span>";
-                }
-            }, 1200);
+                result.innerHTML = "<span style='color: green;'>તમારી ફાઈલ પ્રોસેસમાં છે. ટૂંક સમયમાં અપડેટ મળશે!</span>";
+            }, 1000);
         }
 
-        // ==========================================
-        // વૉટ્સએપ ડોક્યુમેન્ટ અપલોડ લોજિક
-        // ==========================================
-        function handleUpload(event) {
+        // વૉટ્સએપ પર ડેટા મોકલવા
+        function sendToWhatsApp(event) {
             event.preventDefault();
-            const name = document.getElementById('clientName').value.trim();
-            const phone = document.getElementById('clientPhone').value.trim();
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
             const service = document.getElementById('serviceType').value;
-            const files = document.getElementById('clientFiles').files;
 
-            if (!name || !phone || !service) {
-                alert("કૃપા કરીને બધી વિગતો ભરો!");
-                return;
-            }
-
-            let fileCount = files.length;
-            let fileText = fileCount > 0 ? `કુલ ${fileCount} ફાઈલો સિલેક્ટ કરેલી છે.` : "કોઈ ફાઈલ એટેચ નથી.";
-
-            const wpText = `નમસ્તે અશોક ડિજિટલ સર્વિસીસ,\n\n` +
-                           `મેં સાઇટ પરથી ડોક્યુમેન્ટ વિગતો સબમિટ કરી છે:\n` +
-                           `👤 *ગ્રાહકનું નામ:* ${name}\n` +
-                           `📞 *મોબાઈલ નંબર:* ${phone}\n` +
-                           `💼 *સેવા:* ${service}\n` +
-                           `📂 *ફાઈલોની સંખ્યા:* ${fileCount} ફાઈલ(ઓ)\n\n` +
-                           `હું મારા ડોક્યુમેન્ટ્સ અને બાકીની વિગતો અહીં વૉટ્સએપ ચેટમાં મોકલી રહ્યો છું. કૃપા કરીને ચેક કરી આપો.`;
-
-            const encodedText = encodeURIComponent(wpText);
-            const wpUrl = `https://wa.me/919484418910?text=${encodedText}`;
-
-            document.getElementById('uploadStatus').innerHTML = "<span style='color:#198754;'>રીડાયરેક્ટ થઈ રહ્યું છે... કૃપા કરીને વૉટ્સએપ ચેટ ખોલીને ફાઈલો એટેચ કરો.</span>";
+            const text = `નમસ્તે,\nનવું ફોર્મ ભરવાની વિગત:\n👤 નામ: ${name}\n📞 ફોન: ${phone}\n💼 સેવા: ${service}`;
+            const url = `https://wa.me/919484418910?text=${encodeURIComponent(text)}`;
             
-            setTimeout(() => {
-                window.open(wpUrl, '_blank');
-            }, 1000);
+            window.open(url, '_blank');
         }
 
-        // ==========================================
-        // સ્માર્ટ વૉટ્સએપ ચેટ બોટ વિજેટ
-        // ==========================================
-        function toggleBotBox() {
-            const botBox = document.getElementById('botBox');
-            botBox.style.display = botBox.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function handleBotKey(event) {
-            if (event.key === 'Enter') {
-                sendBotMessage();
+        // બહાર ક્લિક કરવાથી મોડલ બંધ થાય
+        window.onclick = function(event) {
+            const modal = document.getElementById('docModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
             }
-        }
-
-        function sendBotMessage() {
-            const inputEl = document.getElementById('botInput');
-            const query = inputEl.value.trim();
-            if (!query) return;
-
-            const botBody = document.getElementById('botBody');
-
-            // યુઝર મેસેજ ઉમેરવો
-            const userMsgDiv = document.createElement('div');
-            userMsgDiv.className = 'whatsapp-bot-msg';
-            userMsgDiv.style.background = '#dcf8c6';
-            userMsgDiv.style.alignSelf = 'flex-end';
-            userMsgDiv.style.float = 'right';
-            userMsgDiv.style.clear = 'both';
-            userMsgDiv.style.marginBottom = '10px';
-            userMsgDiv.innerText = query;
-            botBody.appendChild(userMsgDiv);
-            
-            inputEl.value = '';
-            botBody.scrollTop = botBody.scrollHeight;
-
-            // બોટનો ઓટોમેટેડ રિપ્લાય
-            setTimeout(() => {
-                const replyDiv = document.createElement('div');
-                replyDiv.className = 'whatsapp-bot-msg';
-                replyDiv.style.float = 'left';
-                replyDiv.style.clear = 'both';
-                replyDiv.style.marginBottom = '10px';
-                
-                let replyText = "તમારા પ્રશ્નની નોંધ લેવામાં આવી છે. ફાસ્ટ સપોર્ટ માટે નીચેના બટન પર ક્લિક કરીને અમારી સાથે સીધા વૉટ્સએપ પર જોડાવો!";
-                const lowerQuery = query.toLowerCase();
-
-                if (lowerQuery.includes("આયુષ્માન") || lowerQuery.includes("ayushman")) {
-                    replyText = "આયુષ્માન કાર્ડ મેળવવા માટે આધાર કાર્ડ, રેશન કાર્ડ અને લિંક થયેલ મોબાઈલ નંબરની જરૂર પડશે. સર્વિસ ચાર્જ માત્ર ₹150 છે.";
-                } else if (lowerQuery.includes("pan") || lowerQuery.includes("પાન")) {
-                    replyText = "નવું પાન કાર્ડ મેળવવા માટે આધાર કાર્ડ અને ૨ ફોટાની જરૂર છે. ચાર્જ ₹150 રહેશે.";
-                } else if (lowerQuery.includes("itr") || lowerQuery.includes("ટેક્સ")) {
-                    replyText = "ITR ફાઈલિંગ માટે નિયમ અનુસાર પાન કાર્ડ, આધાર કાર્ડ અને બેંક સ્ટેટમેન્ટ મોકલો.";
-                }
-
-                replyDiv.innerHTML = `${replyText} <br><br> <a href="https://wa.me/919484418910?text=બોટ પ્રશ્ન: ${encodeURIComponent(query)}" target="_blank" style="color:#075e54; font-weight:bold; text-decoration:underline;">સીધો વૉટ્સએપ સંપર્ક</a>`;
-                botBody.appendChild(replyDiv);
-                botBody.scrollTop = botBody.scrollHeight;
-            }, 1000);
         }
     </script>
 </body>
 </html>
+
