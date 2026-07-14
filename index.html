@@ -927,7 +927,7 @@
             <div class="contact-info" style="display: flex; align-items: center; justify-content: center; background: var(--bg-card);">
                 <div style="text-align: center;">
                     <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #198754; margin-bottom: 15px;"></i>
-                    <h3>૧૦૦% વિશ્વાસપાત્ર સેવા</h3>
+                    <h3>૧૦0% વિશ્વાસપાત્ર સેવા</h3>
                     <p style="color: #666;">તમામ દસ્તાવેજોની સુરક્ષા અને સચોટ ઓનલાઈન કામકાજ એ જ અમારો ધ્યેય છે.</p>
                 </div>
             </div>
@@ -1005,11 +1005,12 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
-        // ગૂગલ ટ્રાન્સલેટ ઇનિશિયલાઇઝેશન
+        // ગૂગલ ટ્રાન્સલેટ ઇનિશિયલાઇઝેશન - લેઆઉટ સાથે સેટ કર્યું
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'gu',
                 includedLanguages: 'gu,en,hi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
         }
@@ -1021,6 +1022,7 @@
                 selectEl.value = lang;
                 selectEl.dispatchEvent(new Event('change'));
             } else {
+                // જો તુરંત એલિમેન્ટ ન મળે તો ફરીથી ટ્રાય કરશે
                 setTimeout(function() {
                     const retrySelect = document.querySelector('.goog-te-combo');
                     if (retrySelect) {
@@ -1188,4 +1190,174 @@
             if (data.prices) {
                 priceBox.style.display = "block";
                 priceItemsContainer.innerHTML = "";
-                data.prices.forEach
+                data.prices.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = "price-item-line";
+                    div.innerHTML = `<span>${item.name}</span><span>${item.value}</span>`;
+                    priceItemsContainer.appendChild(div);
+                });
+            } else {
+                priceBox.style.display = "none";
+            }
+
+            document.getElementById('docModal').style.display = "flex";
+        }
+
+        function closeDocs() {
+            document.getElementById('docModal').style.display = "none";
+        }
+
+        function showLegal(policyKey) {
+            const data = legalDatabase[policyKey];
+            if (!data) return;
+            document.getElementById('legalModalTitle').innerText = data.title;
+            document.getElementById('legalModalBody').innerHTML = data.html;
+            document.getElementById('legalModal').style.display = "flex";
+        }
+
+        function closeLegal() {
+            document.getElementById('legalModal').style.display = "none";
+        }
+
+        // એપ્લિકેશન સ્ટેટસ ટ્રેકર લોજિક
+        function checkStatus() {
+            const userInput = document.getElementById('userInput').value.trim();
+            const resultDiv = document.getElementById('statusResult');
+            
+            if (!userInput) {
+                resultDiv.style.color = "#d9534f";
+                resultDiv.innerText = "મહેરબાની કરીને આઈડી અથવા મોબાઈલ નંબર લખો.";
+                return;
+            }
+            
+            resultDiv.style.color = "#0b4c8c";
+            resultDiv.innerText = "તમારી રિકવેસ્ટ વેરિફાય થઈ રહી છે...";
+            
+            setTimeout(() => {
+                resultDiv.style.color = "#198754";
+                resultDiv.innerText = `🔄 સ્ટેટસ: તમારી એપ્લિકેશન (${userInput}) સફળતાપૂર્વક સબમિટ થઈ ગઈ છે અને પ્રોસેસમાં છે. વૉટ્સએપ પર અપડેટ મોકલવામાં આવશે.`;
+            }, 1000);
+        }
+
+        // ઓનલાઈન ડોક્યુમેન્ટ અપલોડથી WhatsApp ઓટોમેશન
+        function handleUpload(event) {
+            event.preventDefault();
+            const name = document.getElementById('clientName').value.trim();
+            const phone = document.getElementById('clientPhone').value.trim();
+            const service = document.getElementById('serviceType').value;
+            const filesInput = document.getElementById('clientFiles');
+            const statusDiv = document.getElementById('uploadStatus');
+
+            if (!name || !phone || !service || filesInput.files.length === 0) {
+                statusDiv.style.color = "#d9534f";
+                statusDiv.innerText = "બધી જ વિગતો ભરવી અને ફાઈલ સિલેક્ટ કરવી ફરજિયાત છે.";
+                return;
+            }
+
+            let fileNames = [];
+            for (let i = 0; i < filesInput.files.length; i++) {
+                fileNames.push(`${i + 1}. ${filesInput.files[i].name}`);
+            }
+
+            const wpNumber = "919484418910";
+            const message = `*નવો ડોક્યુમેન્ટ અપલોડ કન્ફર્મેશન*\n\n` +
+                            `👤 *ગ્રાહકનું નામ:* ${name}\n` +
+                            `📞 *મોબાઈલ નંબર:* ${phone}\n` +
+                            `💼 *સર્વિસ કેટેગરી:* ${service}\n\n` +
+                            `📁 *પસંદ કરેલી ફાઈલો:* \n${fileNames.join('\n')}\n\n` +
+                            `_નોંધ: નમસ્તે અશોકભાઈ, મેં વેબસાઈટ પર આ વિગતો સેટ કરી છે. હું હવે તમને ઉપર મુજબના ડોક્યુમેન્ટ્સ મોકલી રહ્યો છું._`;
+
+            statusDiv.style.color = "#198754";
+            statusDiv.innerText = "વિગતો તૈયાર છે! WhatsApp ઓપન થઈ રહ્યું છે...";
+
+            setTimeout(() => {
+                window.open(`https://wa.me/${wpNumber}?text=${encodeURIComponent(message)}`, '_blank');
+                statusDiv.innerText = "";
+                document.getElementById('docUploadForm').reset();
+            }, 1200);
+        }
+
+        // ચેટ બોટ વિજેટ લોજિક
+        function toggleBotBox() {
+            const botBox = document.getElementById('botBox');
+            if (botBox.style.display === "none" || botBox.style.display === "") {
+                botBox.style.display = "block";
+                document.getElementById('botInput').focus();
+            } else {
+                botBox.style.display = "none";
+            }
+        }
+
+        function handleBotKey(event) {
+            if (event.key === 'Enter') {
+                sendBotMessage();
+            }
+        }
+
+        function sendBotMessage() {
+            const inputEl = document.getElementById('botInput');
+            const userMsg = inputEl.value.trim();
+            if (!userMsg) return;
+
+            const botBody = document.getElementById('botBody');
+
+            const userDiv = document.createElement('div');
+            userDiv.style.textAlign = "right";
+            userDiv.style.margin = "10px 0";
+            userDiv.innerHTML = `<div class="whatsapp-bot-msg" style="background: #d9fdd3; text-align: left;">${userMsg}</div>`;
+            botBody.appendChild(userDiv);
+            
+            inputEl.value = "";
+            botBody.scrollTop = botBody.scrollHeight;
+
+            setTimeout(() => {
+                const typingDiv = document.createElement('div');
+                typingDiv.id = "botTyping";
+                typingDiv.innerHTML = `<div class="whatsapp-bot-msg" style="font-style: italic; color: #777;">ટાઈપિંગ...</div>`;
+                botBody.appendChild(typingDiv);
+                botBody.scrollTop = botBody.scrollHeight;
+
+                setTimeout(() => {
+                    const typingEl = document.getElementById('botTyping');
+                    if (typingEl) typingEl.remove();
+
+                    const botReply = document.createElement('div');
+                    botReply.style.margin = "10px 0";
+                    
+                    let replyText = "તમારા મેસેજ માટે આભાર! 🙏 ઓનલાઈન ફોર્મ, આયુષ્માન કાર્ડ, લાયસન્સ, પાન કાર્ડ કે ITR ના કોઈ પણ કામ માટે તમે સીધો નીચે આપેલા બટન પર ક્લિક કરીને અશોકભાઈ સાથે વૉટ્સએપ પર કનેક્ટ થઈ શકો છો.";
+                    
+                    const cleanMsg = userMsg.toLowerCase();
+                    if (cleanMsg.includes("આધાર") || cleanMsg.includes("adhar") || cleanMsg.includes("pan") || cleanMsg.includes("પાન")) {
+                        replyText = "💳 *પાન કાર્ડ / આધાર લિંક માટે:* નવું પાન કાર્ડ ₹307 માં બની જશે. આધાર કાર્ડ અને ૨ ફોટો વોટ્સએપ પર મોકલી આપો.";
+                    } else if (cleanMsg.includes("આયુષ્માન") || cleanMsg.includes("ayushman") || cleanMsg.includes("હેલ્થ")) {
+                        replyText = "🏥 *આયુષ્માન ભારત કાર્ડ:* ₹5 લાખની મફત સારવાર વાળું કાર્ડ મેળવવા માટે તમારું આધાર કાર્ડ અને રેશન કાર્ડ આ ચેટમાં મોકલી આપો. ચાર્જ માત્ર ₹150 છે.";
+                    } else if (cleanMsg.includes("લાયસન્સ") || cleanMsg.includes("driving") || cleanMsg.includes("rto")) {
+                        replyText = "🚗 *ડ્રાઈવિંગ લાયસન્સ:* લર્નિંગ તેમજ પાકા લાયસન્સ અને રીન્યુઅલ નું કામ એકદમ ઓછો ચાર્જ સાથે ઘરે બેઠા કરી આપવામાં આવશે.";
+                    } else if (cleanMsg.includes("itr") || cleanMsg.includes("ટેક્સ") || cleanMsg.includes("tax")) {
+                        replyText = "📊 *ITR રીટર્ન ફાઈલિંગ:* નોકરિયાતો અને વેપારીઓ માટે આઈટીઆર રીટર્ન ભરવાનું ચાલુ છે. નોર્મલ ફાઈલિંગ ફી ₹750 છે.";
+                    } else if (cleanMsg.includes("ફી") || cleanMsg.includes("price") || cleanMsg.includes("fees")) {
+                        replyText = "💰 *સર્વિસ ચાર્જ લિસ્ટ:* આયુષ્માન કાર્ડ: ₹150, પાન કાર્ડ: ₹307, ITR: ₹750 થી શરૂ, નવો પાસપોર્ટ: ₹3000. વધુ માહિતી માટે મુખ્ય પેજ પર 'જરૂરી ડોક્યુમેન્ટ લિસ્ટ' બટન જુઓ.";
+                    }
+
+                    botReply.innerHTML = `<div class="whatsapp-bot-msg">${replyText}<br><a href="https://wa.me/919484418910?text=${encodeURIComponent(userMsg)}" target="_blank" style="display:inline-block; margin-top:8px; color:#075e54; font-weight:bold; text-decoration:none;"><i class="fa-brands fa-whatsapp"></i> અશોકભાઈ સાથે લાઈવ ચેટ કરો</a></div>`;
+                    botBody.appendChild(botReply);
+                    botBody.scrollTop = botBody.scrollHeight;
+                }, 1000);
+            }, 400);
+        }
+
+        // મોડલ બોક્સની બહાર ક્લિક કરવાથી બંધ થાય તે માટે
+        window.onclick = function(event) {
+            const docModal = document.getElementById('docModal');
+            const legalModal = document.getElementById('legalModal');
+            if (event.target == docModal) {
+                docModal.style.display = "none";
+            }
+            if (event.target == legalModal) {
+                legalModal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
