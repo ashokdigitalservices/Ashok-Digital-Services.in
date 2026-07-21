@@ -175,7 +175,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 20px;
             align-items: center;
         }
 
@@ -183,7 +183,7 @@
             text-decoration: none;
             color: var(--text-main);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         /* Ticker for Updates */
@@ -317,6 +317,83 @@
 
         .about-content { max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.15rem; color: var(--text-main); }
 
+        /* Legal Docs Gallery Section */
+        .legal-docs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .legal-doc-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid #0b4c8c;
+            transition: transform 0.3s;
+        }
+        .legal-doc-card:hover {
+            transform: translateY(-50%);
+            transform: translateY(-5px);
+        }
+        .doc-preview-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background: #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #0b4c8c;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .doc-preview-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: blur(0.5px);
+            pointer-events: none;
+        }
+        .watermark-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(11, 76, 140, 0.35);
+            font-weight: 900;
+            font-size: 1.2rem;
+            transform: rotate(-25deg);
+            pointer-events: none;
+            text-align: center;
+            padding: 10px;
+            line-height: 1.3;
+        }
+        .btn-view-doc {
+            background-color: #0b4c8c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+        .btn-view-doc:hover {
+            background-color: #083868;
+        }
+
         /* Workspace Photo Section */
         .workspace-section { padding: 60px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; background: var(--bg-card); transition: background-color 0.3s; }
         .workspace-img { max-width: 100%; width: 450px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -414,7 +491,7 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.6);
             align-items: center;
             justify-content: center;
         }
@@ -459,6 +536,25 @@
         }
         [data-theme="dark"] .custom-modal-title { color: #64b5f6; }
         
+        /* Secure Document Modal View */
+        .secure-view-container {
+            position: relative;
+            width: 100%;
+            max-height: 60vh;
+            overflow-y: auto;
+            background: #212529;
+            padding: 10px;
+            border-radius: 8px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .secure-view-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: none;
+        }
+
         .modal-price-box {
             background: var(--light-color);
             padding: 12px 15px;
@@ -483,17 +579,6 @@
             margin-bottom: 4px;
             color: var(--text-main);
         }
-        .price-total-line {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.05rem;
-            font-weight: bold;
-            border-top: 1px dashed var(--border-color);
-            margin-top: 8px;
-            padding-top: 6px;
-            color: #0b4c8c;
-        }
-        [data-theme="dark"] .price-total-line { color: #64b5f6; }
 
         .custom-doc-list {
             list-style: none;
@@ -534,7 +619,7 @@
             .hero h1 { font-size: 2rem; }
             .fixed-call-bar { display: grid; }
             .hero .cta-buttons { display: flex; } 
-            nav ul { flex-direction: column; gap: 12px; }
+            nav ul { flex-direction: column; gap: 10px; }
             .whatsapp-bot-widget { bottom: 85px; right: 15px; }
         }
     </style>
@@ -561,6 +646,7 @@
                 <ul>
                     <li><a href="#home">હોમ</a></li>
                     <li><a href="#about">અમારી વિશે</a></li>
+                    <li><a href="#legal-docs">અમારા દસ્તાવેજો</a></li>
                     <li><a href="#status">સ્ટેટસ જુઓ</a></li>
                     <li><a href="#services">સેવાઓ</a></li>
                     <li><a href="#payment">પેમેન્ટ</a></li>
@@ -623,6 +709,55 @@
         </div>
     </section>
 
+    <!-- 🌟 નવો સેક્શન: અમારા દસ્તાવેજો (Our Legal Certificates) -->
+    <section id="legal-docs" class="section-padding bg-light">
+        <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i> અમારા સત્તાવાર દસ્તાવેજો (Legal Certificates)</h2>
+        <p style="text-align: center; max-width: 800px; margin: -20px auto 40px; color: var(--text-muted); font-weight: 600;">
+            અમે ૧૦૦% કાયદેસર અને નોંધાયેલ ઓનલાઈન સર્વિસ આપીએ છીએ. અમારા સત્તાવાર રજીસ્ટ્રેશન સર્ટિફિકેટ્સ નીચે જુઓ:
+        </p>
+        
+        <div class="legal-docs-container">
+            <!-- 1. MSME Certificate -->
+            <div class="legal-doc-card">
+                <h3 style="color: #0b4c8c; font-size: 1.25rem;"><i class="fa-solid fa-award"></i> MSME ઉદ્યોગ આધાર</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">ભારત સરકાર માન્ય રજીસ્ટ્રેશન</p>
+                <div class="doc-preview-wrapper" oncontextmenu="return false;">
+                    <img src="msme-certificate-thumb.png" alt="MSME Certificate Preview" class="doc-preview-img" onerror="this.src='https://via.placeholder.com/400x300/0b4c8c/ffffff?text=MSME+REGISTRATION+CERTIFICATE'">
+                    <div class="watermark-overlay">ASHOK DIGITAL<br>VERIFICATION COPY</div>
+                </div>
+                <button class="btn-view-doc" onclick="openSecureViewer('MSME ઉદ્યોગ આધાર સર્ટિફિકેટ', 'msme-certificate-thumb.png')">
+                    <i class="fa-solid fa-eye"></i> દસ્તાવેજ જુઓ (View)
+                </button>
+            </div>
+
+            <!-- 2. Shop Act / Gumasta -->
+            <div class="legal-doc-card">
+                <h3 style="color: #0b4c8c; font-size: 1.25rem;"><i class="fa-solid fa-store"></i> ગુમાસ્તા ધારો / શોપ એક્ટ</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">દુકાન તથા વ્યવસાય રજીસ્ટ્રેશન</p>
+                <div class="doc-preview-wrapper" oncontextmenu="return false;">
+                    <img src="shopact-certificate-thumb.png" alt="Shop Act Preview" class="doc-preview-img" onerror="this.src='https://via.placeholder.com/400x300/198754/ffffff?text=GUMASTA+LICENSE+CERTIFICATE'">
+                    <div class="watermark-overlay">ASHOK DIGITAL<br>VERIFICATION COPY</div>
+                </div>
+                <button class="btn-view-doc" onclick="openSecureViewer('ગુમાસ્તા ધારો / શોપ એક્ટ લાયસન્સ', 'shopact-certificate-thumb.png')">
+                    <i class="fa-solid fa-eye"></i> દસ્તાવેજ જુઓ (View)
+                </button>
+            </div>
+
+            <!-- 3. Digital Business License -->
+            <div class="legal-doc-card">
+                <h3 style="color: #0b4c8c; font-size: 1.25rem;"><i class="fa-solid fa-file-contract"></i> સર્વિસ રજીસ્ટ્રેશન</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">અધિકૃત ઓનલાઈન સર્વિસ આઈડી</p>
+                <div class="doc-preview-wrapper" oncontextmenu="return false;">
+                    <img src="business-id-thumb.png" alt="Business License Preview" class="doc-preview-img" onerror="this.src='https://via.placeholder.com/400x300/212529/ffffff?text=ASHOK+DIGITAL+SERVICES+AUTHORIZATION'">
+                    <div class="watermark-overlay">ASHOK DIGITAL<br>VERIFICATION COPY</div>
+                </div>
+                <button class="btn-view-doc" onclick="openSecureViewer('અધિકૃત ડિજિટલ સર્વિસ આઈડી', 'business-id-thumb.png')">
+                    <i class="fa-solid fa-eye"></i> દસ્તાવેજ જુઓ (View)
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Workspace Photo Section -->
     <section class="workspace-section">
         <img src="https://static.vecteezy.com/system/resources/previews/076/419/626/large_2x/focused-young-male-entrepreneur-working-on-a-laptop-at-a-home-office-desk-professional-freelance-man-using-computer-for-remote-work-business-strategy-and-online-digital-marketing-photo.jpg" alt="Workspace" class="workspace-img">
@@ -673,7 +808,7 @@
         <h2 class="section-title">અમારી મુખ્ય સેવાઓ (Our Services)</h2>
         <div class="services-container">
             
-            <!-- 1. 🌟 7/12 & 8-A Utara (નવી ઉમેરેલી સેવા) -->
+            <!-- 1. 🌟 7/12 & 8-A Utara -->
             <div class="service-card" style="border-top-color: #0b4c8c;">
                 <div class="icon-box" style="background: rgba(11, 76, 140, 0.1); color: #0b4c8c;"><i class="fa-solid fa-file-contract"></i></div>
                 <h3>7/12 / 8-A ના ઉતારા</h3>
@@ -962,6 +1097,21 @@
         </div>
     </div>
 
+    <!-- 🌟 કસ્ટમ સિક્યોર વ્યુઅર મોડલ (Secure Document Modal) -->
+    <div id="secureDocModal" class="custom-modal">
+        <div class="custom-modal-content" style="max-width: 650px;">
+            <span class="custom-modal-close" onclick="closeSecureViewer()">&times;</span>
+            <div id="secureDocTitle" class="custom-modal-title"><i class="fa-solid fa-shield-halved"></i> દસ્તાવેજ વિગતો</div>
+            <div class="secure-view-container" oncontextmenu="return false;">
+                <div class="watermark-overlay" style="z-index: 2; font-size: 1.8rem; opacity: 0.25;">ASHOK DIGITAL SERVICES<br>VERIFICATION COPY ONLY</div>
+                <img id="secureDocImg" src="" alt="Secure Document" class="secure-view-img">
+            </div>
+            <p style="font-size: 0.8rem; color: #888; text-align: center; margin-top: 10px;">
+                🔒 સુરક્ષા હેતુથી આ દસ્તાવેજ ફક્ત ઓનલાઈન ચકાસણી માટે જ ઉપલબ્ધ છે.
+            </p>
+        </div>
+    </div>
+
     <!-- લીગલ પોલીસી દર્શાવવા માટેનું કસ્ટમ પોપ-અપ મોડલ બોક્સ -->
     <div id="legalModal" class="custom-modal">
         <div class="custom-modal-content" style="max-width: 650px;">
@@ -1068,6 +1218,17 @@
                 icon.className = 'fa-solid fa-sun';
             }
         });
+
+        // સિક્યોર વ્યુઅર મોડલ કંટ્રોલ
+        function openSecureViewer(title, imgSrc) {
+            document.getElementById('secureDocTitle').innerHTML = `<i class="fa-solid fa-shield-halved"></i> ${title}`;
+            document.getElementById('secureDocImg').src = imgSrc;
+            document.getElementById('secureDocModal').style.display = "flex";
+        }
+
+        function closeSecureViewer() {
+            document.getElementById('secureDocModal').style.display = "none";
+        }
 
         // જરૂરી ડોક્યુમેન્ટ્સનો પાકો ડેટાબેઝ
         const docDatabase = {
@@ -1303,11 +1464,15 @@
         window.onclick = function(event) {
             const docModal = document.getElementById('docModal');
             const legalModal = document.getElementById('legalModal');
+            const secureDocModal = document.getElementById('secureDocModal');
             if (event.target == docModal) {
                 docModal.style.display = "none";
             }
             if (event.target == legalModal) {
                 legalModal.style.display = "none";
+            }
+            if (event.target == secureDocModal) {
+                secureDocModal.style.display = "none";
             }
         }
     </script>
