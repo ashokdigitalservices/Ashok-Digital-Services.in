@@ -336,7 +336,6 @@
             transition: transform 0.3s;
         }
         .legal-doc-card:hover {
-            transform: translateY(-50%);
             transform: translateY(-5px);
         }
         .doc-preview-wrapper {
@@ -354,11 +353,10 @@
             user-select: none;
             -webkit-user-select: none;
         }
-        .doc-preview-img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            filter: blur(0.5px);
+        .doc-preview-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
             pointer-events: none;
         }
         .watermark-overlay {
@@ -385,6 +383,7 @@
             border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -540,19 +539,17 @@
         .secure-view-container {
             position: relative;
             width: 100%;
-            max-height: 60vh;
-            overflow-y: auto;
+            height: 60vh;
             background: #212529;
-            padding: 10px;
             border-radius: 8px;
+            overflow: hidden;
             user-select: none;
             -webkit-user-select: none;
         }
-        .secure-view-img {
+        .secure-view-iframe {
             width: 100%;
-            height: auto;
-            display: block;
-            pointer-events: none;
+            height: 100%;
+            border: none;
         }
 
         .modal-price-box {
@@ -717,15 +714,15 @@
         </p>
         
         <div class="legal-docs-container">
-            <!-- 1. MSME Certificate -->
+            <!-- 1. MSME Certificate (Google Drive Linked) -->
             <div class="legal-doc-card">
                 <h3 style="color: #0b4c8c; font-size: 1.25rem;"><i class="fa-solid fa-award"></i> MSME ઉદ્યોગ આધાર</h3>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">ભારત સરકાર માન્ય રજીસ્ટ્રેશન</p>
                 <div class="doc-preview-wrapper" oncontextmenu="return false;">
-                    <img src="msme-certificate-thumb.png" alt="MSME Certificate Preview" class="doc-preview-img" onerror="this.src='https://via.placeholder.com/400x300/0b4c8c/ffffff?text=MSME+REGISTRATION+CERTIFICATE'">
+                    <iframe src="https://drive.google.com/file/d/1uFGc80JjQZ8nw_ocu8Rjp_MMr-YwCE0V/preview" class="doc-preview-iframe"></iframe>
                     <div class="watermark-overlay">ASHOK DIGITAL<br>VERIFICATION COPY</div>
                 </div>
-                <button class="btn-view-doc" onclick="openSecureViewer('MSME ઉદ્યોગ આધાર સર્ટિફિકેટ', 'msme-certificate-thumb.png')">
+                <button class="btn-view-doc" onclick="openSecureViewer('MSME ઉદ્યોગ આધાર સર્ટિફિકેટ', 'https://drive.google.com/file/d/1uFGc80JjQZ8nw_ocu8Rjp_MMr-YwCE0V/preview')">
                     <i class="fa-solid fa-eye"></i> દસ્તાવેજ જુઓ (View)
                 </button>
             </div>
@@ -735,10 +732,10 @@
                 <h3 style="color: #0b4c8c; font-size: 1.25rem;"><i class="fa-solid fa-store"></i> ગુમાસ્તા ધારો / શોપ એક્ટ</h3>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">દુકાન તથા વ્યવસાય રજીસ્ટ્રેશન</p>
                 <div class="doc-preview-wrapper" oncontextmenu="return false;">
-                    <img src="shopact-certificate-thumb.png" alt="Shop Act Preview" class="doc-preview-img" onerror="this.src='https://via.placeholder.com/400x300/198754/ffffff?text=GUMASTA+LICENSE+CERTIFICATE'">
+                    <img src="shopact-certificate-thumb.png" alt="Shop Act Preview" style="max-width:100%; max-height:100%; object-fit:contain;" onerror="this.src='https://via.placeholder.com/400x300/198754/ffffff?text=GUMASTA+LICENSE+CERTIFICATE'">
                     <div class="watermark-overlay">ASHOK DIGITAL<br>VERIFICATION COPY</div>
                 </div>
-                <button class="btn-view-doc" onclick="openSecureViewer('ગુમાસ્તા ધારો / શોપ એક્ટ લાયસન્સ', 'shopact-certificate-thumb.png')">
+                <button class="btn-view-doc" onclick="openSecureViewer('ગુમાસ્તા ધારો / શોપ એક્ટ લાયસન્સ', 'https://via.placeholder.com/600x800/198754/ffffff?text=GUMASTA+LICENSE+FULL+VIEW')">
                     <i class="fa-solid fa-eye"></i> દસ્તાવેજ જુઓ (View)
                 </button>
             </div>
@@ -748,10 +745,10 @@
                 <h3 style="color: #0b4c8c; font-size: 1.25rem;"><i class="fa-solid fa-file-contract"></i> સર્વિસ રજીસ્ટ્રેશન</h3>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">અધિકૃત ઓનલાઈન સર્વિસ આઈડી</p>
                 <div class="doc-preview-wrapper" oncontextmenu="return false;">
-                    <img src="business-id-thumb.png" alt="Business License Preview" class="doc-preview-img" onerror="this.src='https://via.placeholder.com/400x300/212529/ffffff?text=ASHOK+DIGITAL+SERVICES+AUTHORIZATION'">
+                    <img src="business-id-thumb.png" alt="Business License Preview" style="max-width:100%; max-height:100%; object-fit:contain;" onerror="this.src='https://via.placeholder.com/400x300/212529/ffffff?text=ASHOK+DIGITAL+SERVICES+AUTHORIZATION'">
                     <div class="watermark-overlay">ASHOK DIGITAL<br>VERIFICATION COPY</div>
                 </div>
-                <button class="btn-view-doc" onclick="openSecureViewer('અધિકૃત ડિજિટલ સર્વિસ આઈડી', 'business-id-thumb.png')">
+                <button class="btn-view-doc" onclick="openSecureViewer('અધિકૃત ડિજિટલ સર્વિસ આઈડી', 'https://via.placeholder.com/600x800/212529/ffffff?text=ASHOK+DIGITAL+AUTHORIZATION+VIEW')">
                     <i class="fa-solid fa-eye"></i> દસ્તાવેજ જુઓ (View)
                 </button>
             </div>
@@ -1103,8 +1100,7 @@
             <span class="custom-modal-close" onclick="closeSecureViewer()">&times;</span>
             <div id="secureDocTitle" class="custom-modal-title"><i class="fa-solid fa-shield-halved"></i> દસ્તાવેજ વિગતો</div>
             <div class="secure-view-container" oncontextmenu="return false;">
-                <div class="watermark-overlay" style="z-index: 2; font-size: 1.8rem; opacity: 0.25;">ASHOK DIGITAL SERVICES<br>VERIFICATION COPY ONLY</div>
-                <img id="secureDocImg" src="" alt="Secure Document" class="secure-view-img">
+                <iframe id="secureDocIframe" src="" class="secure-view-iframe"></iframe>
             </div>
             <p style="font-size: 0.8rem; color: #888; text-align: center; margin-top: 10px;">
                 🔒 સુરક્ષા હેતુથી આ દસ્તાવેજ ફક્ત ઓનલાઈન ચકાસણી માટે જ ઉપલબ્ધ છે.
@@ -1220,14 +1216,15 @@
         });
 
         // સિક્યોર વ્યુઅર મોડલ કંટ્રોલ
-        function openSecureViewer(title, imgSrc) {
+        function openSecureViewer(title, docUrl) {
             document.getElementById('secureDocTitle').innerHTML = `<i class="fa-solid fa-shield-halved"></i> ${title}`;
-            document.getElementById('secureDocImg').src = imgSrc;
+            document.getElementById('secureDocIframe').src = docUrl;
             document.getElementById('secureDocModal').style.display = "flex";
         }
 
         function closeSecureViewer() {
             document.getElementById('secureDocModal').style.display = "none";
+            document.getElementById('secureDocIframe').src = "";
         }
 
         // જરૂરી ડોક્યુમેન્ટ્સનો પાકો ડેટાબેઝ
@@ -1472,7 +1469,7 @@
                 legalModal.style.display = "none";
             }
             if (event.target == secureDocModal) {
-                secureDocModal.style.display = "none";
+                closeSecureViewer();
             }
         }
     </script>
