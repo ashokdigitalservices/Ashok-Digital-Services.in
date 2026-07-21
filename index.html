@@ -42,13 +42,25 @@
             scroll-behavior: smooth;
         }
 
-        body {
+        /* સ્ક્રીનશોટ અને સિલેક્શન અટકાવવા માટે સેફ્ટી કંટ્રોલ */
+        body, html {
             background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.6;
             padding-bottom: 60px;
             top: 0 !important;
             transition: background-color 0.3s, color 0.3s;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* પ્રિન્ટ અટકાવવા માટેનો નિયમ */
+        @media print {
+            body {
+                display: none !important;
+            }
         }
 
         /* ડાર્ક મોડ ટોગલ બટન સ્ટાઈલ */
@@ -362,7 +374,7 @@
         .watermark-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.03);
+            background: rgba(0,0,0,0.01);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -374,6 +386,7 @@
             text-align: center;
             padding: 10px;
             line-height: 1.3;
+            z-index: 10;
         }
         .btn-view-doc {
             background-color: #0b4c8c;
@@ -520,6 +533,7 @@
             color: #aaa;
             cursor: pointer;
             transition: color 0.2s;
+            z-index: 10001;
         }
         .custom-modal-close:hover { color: #d9534f; }
         .custom-modal-title {
@@ -535,7 +549,7 @@
         }
         [data-theme="dark"] .custom-modal-title { color: #64b5f6; }
         
-        /* Secure Document Modal View */
+        /* 🔒 Secure Document Modal View (Google Drive હેડર અને બટનો બ્લોક કરવા) */
         .secure-view-container {
             position: relative;
             width: 100%;
@@ -550,6 +564,17 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+        /* આ પારદર્શક લેયર ગૂગલ ડ્રાઇવના ઉપરના બટનો/ઈમેલ લિંક્સને સંપૂર્ણ અક્ષમ કરે છે */
+        .secure-top-blocker {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 55px;
+            background: transparent;
+            z-index: 999;
+            pointer-events: auto;
         }
 
         .modal-price-box {
@@ -621,7 +646,7 @@
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <!-- Top Announcement Ticker -->
     <div class="ticker-wrap">
@@ -718,7 +743,7 @@
             <div class="legal-doc-card">
                 <h3 style="color: #0b4c8c; font-size: 1.25rem;"><i class="fa-solid fa-award"></i> MSME ઉદ્યોગ આધાર</h3>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">ભારત સરકાર માન્ય રજીસ્ટ્રેશન</p>
-                <div class="doc-preview-wrapper" oncontextmenu="return false;">
+                <div class="doc-preview-wrapper">
                     <iframe src="https://drive.google.com/file/d/1uFGc80JjQZ8nw_ocu8Rjp_MMr-YwCE0V/preview" class="doc-preview-iframe"></iframe>
                     <div class="watermark-overlay">ASHOK DIGITAL<br>VERIFICATION COPY</div>
                 </div>
@@ -731,7 +756,7 @@
             <div class="legal-doc-card">
                 <h3 style="color: #0b4c8c; font-size: 1.25rem;"><i class="fa-solid fa-store"></i> ગુમાસ્તા ધારો / શોપ એક્ટ</h3>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">દુકાન તથા વ્યવસાય રજીસ્ટ્રેશન</p>
-                <div class="doc-preview-wrapper" oncontextmenu="return false;">
+                <div class="doc-preview-wrapper">
                     <img src="shopact-certificate-thumb.png" alt="Shop Act Preview" style="max-width:100%; max-height:100%; object-fit:contain;" onerror="this.src='https://via.placeholder.com/400x300/198754/ffffff?text=GUMASTA+LICENSE+CERTIFICATE'">
                     <div class="watermark-overlay">ASHOK DIGITAL<br>VERIFICATION COPY</div>
                 </div>
@@ -740,11 +765,11 @@
                 </button>
             </div>
 
-            <!-- 3. સેવા નોંધણી / Service Registration Certificate (New Google Drive Link) -->
+            <!-- 3. સેવા નોંધણી / Service Registration Certificate -->
             <div class="legal-doc-card">
                 <h3 style="color: #0b4c8c; font-size: 1.25rem;"><i class="fa-solid fa-file-contract"></i> સેવા નોંધણી</h3>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">અધિકૃત સેવા નોંધણી પ્રમાણપત્ર</p>
-                <div class="doc-preview-wrapper" oncontextmenu="return false;">
+                <div class="doc-preview-wrapper">
                     <iframe src="https://drive.google.com/file/d/19aGtRLbewMonT8t-ElOIBidkSYndMPl-/preview" class="doc-preview-iframe"></iframe>
                     <div class="watermark-overlay">ASHOK DIGITAL<br>VERIFICATION COPY</div>
                 </div>
@@ -1094,12 +1119,14 @@
         </div>
     </div>
 
-    <!-- 🌟 કસ્ટમ સિક્યોર વ્યુઅર મોડલ (Secure Document Modal) -->
+    <!-- 🌟 કસ્ટમ સિક્યોર વ્યુઅર મોડલ (Secure Document Modal - સિક્યોરિટી ફિક્સ સાથે) -->
     <div id="secureDocModal" class="custom-modal">
         <div class="custom-modal-content" style="max-width: 650px;">
             <span class="custom-modal-close" onclick="closeSecureViewer()">&times;</span>
             <div id="secureDocTitle" class="custom-modal-title"><i class="fa-solid fa-shield-halved"></i> દસ્તાવેજ વિગતો</div>
             <div class="secure-view-container" oncontextmenu="return false;">
+                <!-- ગૂગલ ડ્રાઈવ હેડર લિંક્સ તથા ઓપન વિથ/એક્સેસ બટન બ્લોક કરવા માટેનું પારદર્શક લેયર -->
+                <div class="secure-top-blocker"></div>
                 <iframe id="secureDocIframe" src="" class="secure-view-iframe"></iframe>
             </div>
             <p style="font-size: 0.8rem; color: #888; text-align: center; margin-top: 10px;">
@@ -1163,6 +1190,16 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
+        // સ્ક્રીનશોટ અને પ્રિન્ટ સ્ક્રીન અટકાવવાના કીબોર્ડ શોર્ટકટ્સ બ્લોકિંગ
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+S, Ctrl+P, Ctrl+U, PrintScreen બ્લોક કરવા
+            if (e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'u') || e.key === 'PrintScreen') {
+                e.preventDefault();
+                alert('સુરક્ષા હેતુથી આ દસ્તાવેજ ડાઉનલોડ અથવા પ્રિન્ટ કરી શકાશે નહીં.');
+                return false;
+            }
+        });
+
         // ગૂગલ ટ્રાન્સલેટ ઇનિશિયલાઇઝેશન
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
