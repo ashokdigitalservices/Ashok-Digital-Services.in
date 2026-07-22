@@ -972,7 +972,7 @@
         </div>
     </section>
 
-    <!-- Customer Reviews Section -->
+    <!-- 🌟 Customer Reviews Section (બધા જ ૬ રિવ્યૂઝ સાથે) -->
     <section id="reviews" class="section-padding bg-white">
         <h2 class="section-title">ગ્રાહકોના અભિપ્રાય (Customer Reviews)</h2>
         <div class="reviews-container">
@@ -990,6 +990,21 @@
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <p>"મેં અશોકભાઈ પાસે નવું પાસપોર્ટ અને પાન કાર્ડ કઢાવ્યું. બધી પ્રોસેસ બહુ ચોખ્ખી અને કાયદેસર રીતે ઘરે બેઠા કરી આપી."</p>
                 <div class="reviewer-name">- વિજયભાઈ જોશી, મહેસાણા</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"દુકાન માટે શોપ એક્ટ અને MSME ઉદ્યોગ આધાર સર્ટિફિકેટ માત્ર ૨૪ કલાકમાં રેડી કરી આપ્યું. ખૂબ ખૂબ આભાર અશોકભાઈ."</p>
+                <div class="reviewer-name">- કલ્પેશ પ્રજાપતિ, વડોદરા</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"નિયમ અનુસાર ઓનલાઈન ITR રિટર્ન ફાઈલિંગ અને ફાસ્ટ TDS રિફંડ મેળવવા માટેની બેસ્ટ જગ્યા. ફૂલ ભરોસાપાત્ર સર્વિસ છે."</p>
+                <div class="reviewer-name">- મનીષભાઈ સોની, રાજકોટ</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"રેશન કાર્ડમાં નવું નામ ઉમેરવાનું અને ચૂંટણી કાર્ડનું કામ ઘણું જ સચોટ કરી આપ્યું. સરકારી કામ હવે એકદમ સરળ થઈ ગયું."</p>
+                <div class="reviewer-name">- ભાવનાબેન રાઠોડ, નવસારી</div>
             </div>
         </div>
     </section>
@@ -1037,7 +1052,7 @@
         </div>
     </section>
 
-    <!-- 🌟 કસ્ટમ પોપ-અપ મોડલ બોક્સ (જરૂરી કાગળો & પ્રાઇસ લિસ્ટ દર્શાવવા) -->
+    <!-- કસ્ટમ પોપ-અપ મોડલ બોક્સ (જરૂરી કાગળો & પ્રાઇસ લિસ્ટ દર્શાવવા) -->
     <div id="docModal" class="custom-modal">
         <div class="custom-modal-content">
             <span class="custom-modal-close" onclick="closeDocs()">&times;</span>
@@ -1051,7 +1066,7 @@
         </div>
     </div>
 
-    <!-- 🌟 કસ્ટમ સિક્યોર વ્યુઅર મોડલ -->
+    <!-- કસ્ટમ સિક્યોર વ્યુઅર મોડલ -->
     <div id="secureDocModal" class="custom-modal">
         <div class="custom-modal-content" style="max-width: 650px;">
             <span class="custom-modal-close" onclick="closeSecureViewer()">&times;</span>
@@ -1102,7 +1117,7 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
-        // 🌟 દસ્તાવેજો અને જૂની પ્રાઇસ લિસ્ટનો સંપૂર્ણ ડેટાબેઝ
+        // દસ્તાવેજો અને જૂની પ્રાઇસ લિસ્ટનો ડેટાબેઝ
         const docDatabase = {
             "utara_712": {
                 title: "7/12 & 8-A ના ઉતારા માટે જરૂરી માહિતી",
@@ -1190,7 +1205,6 @@
             }
         };
 
-        // 🌟 પોપ-અપ મોડલ ઓપન કરવાનું ફંક્શન
         function showDocs(serviceKey) {
             const data = docDatabase[serviceKey];
             if (!data) return;
@@ -1223,12 +1237,10 @@
             document.getElementById('docModal').style.display = "flex";
         }
 
-        // 🌟 મોડલ ક્લોઝ કરવા માટેનું ફંક્શન
         function closeDocs() {
             document.getElementById('docModal').style.display = "none";
         }
 
-        // સ્ક્રીનશોટ બ્લોકિંગ
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'u') || e.key === 'PrintScreen') {
                 e.preventDefault();
@@ -1355,7 +1367,6 @@
             }, 1000);
         }
 
-        // મોડલની બહાર ક્લિક કરવાથી બંધ થાય તે માટે
         window.onclick = function(event) {
             const docModal = document.getElementById('docModal');
             const secureDocModal = document.getElementById('secureDocModal');
